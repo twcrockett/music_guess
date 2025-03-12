@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Play Options - Guess the Song Year</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Free Play Options</h1>
+    <h2>Customize your experience</h2>
+
+    <div class="options-container">
+        <div class="options-form">
+            <div class="option-group">
+                <label class="option-label">Game Settings:</label>
+
+                <div class="option-description">
+                    Choose how you want to play:
+                </div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="title-option">
+                    <label for="title-option">Show Song Title</label>
+                </div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="hint-option">
+                    <label for="hint-option">Enable Artist Hints</label>
+                </div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="unlimited-guesses">
+                    <label for="unlimited-guesses">Unlimited Guesses Mode</label>
+                </div>
+            </div>
+
+            <button id="start-btn" class="start-btn">Start Free Play</button>
+        </div>
+
+        <a href="/" class="back-link">← Back to Home</a>
+    </div>
+
+    <script src="/static/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inject the navbar
+            injectNavbar();
+
+            // Replace the footer with the common footer
+            document.body.insertAdjacentHTML('beforeend', footerHTML);
+
+            const startBtn = document.getElementById('start-btn');
+            const titleOption = document.getElementById('title-option');
+            const hintOption = document.getElementById('hint-option');
+            const unlimitedGuessesOption = document.getElementById('unlimited-guesses');
+
+            startBtn.addEventListener('click', function() {
+                const showTitle = titleOption.checked;
+                const showArtist = hintOption.checked;
+                const unlimited = unlimitedGuessesOption.checked;
+
+                // Redirect to free play page with options as query parameters
+                window.location.href = `/free?title=${showTitle}&artist=${showArtist}&unlimited=${unlimited}`;
+            });
+        });
+    </script>
+</body>
+</html>

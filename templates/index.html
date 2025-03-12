@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Song Year</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Guess the Song Year</h1>
+    <h2>How well do you know music history?</h2>
+
+    <div class="game-container">
+        <div class="description">
+            <p>Test your music knowledge by guessing the release year of popular songs! Start with 100 points, and try to maintain your score by guessing accurately.</p>
+        </div>
+
+        <div class="mode-selection">
+            <a href="/daily" class="mode-btn daily">Daily Challenge</a>
+            <a href="/free_options" class="mode-btn">Free Play</a>
+        </div>
+
+        <div class="game-info">
+            <h3>Game Modes:</h3>
+            <p><strong>Daily Challenge:</strong> 5 songs that change daily. Everyone gets the same songs for fair competition!</p>
+            <p><strong>Free Play:</strong> Play as many songs as you want with optional hints and unlimited guesses.</p>
+        </div>
+    </div>
+
+    <script src="/static/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            injectNavbar();
+            document.body.insertAdjacentHTML('beforeend', footerHTML);
+        });
+    </script>
+</body>
+</html>

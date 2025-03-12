@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "year": 1975
+  },
+  {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "year": 1983
+  },
+  {
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "year": 1991
+  },
+  {
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "year": 2011
+  },
+  {
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "year": 1968
+  },
+  {
+    "title": "Like a Rolling Stone",
+    "artist": "Bob Dylan",
+    "year": 1965
+  },
+  {
+    "title": "Sweet Child O' Mine",
+    "artist": "Guns N' Roses",
+    "year": 1987
+  },
+  {
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "year": 1971
+  },
+  {
+    "title": "What's Going On",
+    "artist": "Marvin Gaye",
+    "year": 1971
+  },
+  {
+    "title": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "year": 1971
+  },
+  {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "year": 1982
+  },
+  {
+    "title": "Vogue",
+    "artist": "Madonna",
+    "year": 1990
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson ft. Bruno Mars",
+    "year": 2014
+  },
+  {
+    "title": "Despacito",
+    "artist": "Luis Fonsi ft. Daddy Yankee",
+    "year": 2017
+  },
+  {
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": 1976
+  },
+  {
+    "title": "Yesterday",
+    "artist": "The Beatles",
+    "year": 1965
+  },
+  {
+    "title": "Every Breath You Take",
+    "artist": "The Police",
+    "year": 1983
+  },
+  {
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "year": 1995
+  },
+  {
+    "title": "Africa",
+    "artist": "Toto",
+    "year": 1982
+  },
+  {
+    "title": "I Want to Hold Your Hand",
+    "artist": "The Beatles",
+    "year": 1963
+  },
+  {
+    "title": "Lose Yourself",
+    "artist": "Eminem",
+    "year": 2002
+  },
+  {
+    "title": "Royals",
+    "artist": "Lorde",
+    "year": 2013
+  },
+  {
+    "title": "Another One Bites the Dust",
+    "artist": "Queen",
+    "year": 1980
+  },
+  {
+    "title": "Stand By Me",
+    "artist": "Ben E. King",
+    "year": 1961
+  },
+  {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "year": 2019
+  },
+  {
+    "title": "God's Plan",
+    "artist": "Drake",
+    "year": 2018
+  },
+  {
+    "title": "Happy",
+    "artist": "Pharrell Williams",
+    "year": 2013
+  },
+  {
+    "title": "Hallelujah",
+    "artist": "Leonard Cohen",
+    "year": 1984
+  },
+  {
+    "title": "Bad Guy",
+    "artist": "Billie Eilish",
+    "year": 2019
+  },
+  {
+    "title": "Don't Stop Believin'",
+    "artist": "Journey",
+    "year": 1981
+  }
+]
