@@ -148,5 +148,2585 @@
     "title": "Don't Stop Believin'",
     "artist": "Journey",
     "year": 1981
+  },
+  {
+    "title": "Bad Guy",
+    "artist": "Billie Eilish",
+    "year": 2019
+  },
+  {
+    "title": "Shape of You",
+    "artist": "Ed Sheeran",
+    "year": 2017
+  },
+  {
+    "title": "Dynamite",
+    "artist": "BTS",
+    "year": 2020
+  },
+  {
+    "title": "Sicko Mode",
+    "artist": "Travis Scott",
+    "year": 2018
+  },
+  {
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "year": 2011
+  },
+  {
+    "title": "Humble",
+    "artist": "Kendrick Lamar",
+    "year": 2017
+  },
+  {
+    "title": "Shallow",
+    "artist": "Lady Gaga & Bradley Cooper",
+    "year": 2018
+  },
+  {
+    "title": "Gangnam Style",
+    "artist": "PSY",
+    "year": 2012
+  },
+  {
+    "title": "Butter",
+    "artist": "BTS",
+    "year": 2021
+  },
+  {
+    "title": "Bodak Yellow",
+    "artist": "Cardi B",
+    "year": 2017
+  },
+  {
+    "title": "Tame Impala",
+    "artist": "The Less I Know The Better",
+    "year": 2015
+  },
+  {
+    "title": "Dance Monkey",
+    "artist": "Tones and I",
+    "year": 2019
+  },
+  {
+    "title": "Hotline Bling",
+    "artist": "Drake",
+    "year": 2015
+  },
+  {
+    "title": "Old Town Road",
+    "artist": "Lil Nas X ft. Billy Ray Cyrus",
+    "year": 2019
+  },
+  {
+    "title": "Call Me Maybe",
+    "artist": "Carly Rae Jepsen",
+    "year": 2012
+  },
+  {
+    "title": "Watermelon Sugar",
+    "artist": "Harry Styles",
+    "year": 2020
+  },
+  {
+    "title": "Money",
+    "artist": "Lisa",
+    "year": 2021
+  },
+  {
+    "title": "Sunflower",
+    "artist": "Post Malone & Swae Lee",
+    "year": 2018
+  },
+  {
+    "title": "Midnight City",
+    "artist": "M83",
+    "year": 2011
+  },
+  {
+    "title": "WAP",
+    "artist": "Cardi B ft. Megan Thee Stallion",
+    "year": 2020
+  },
+  {
+    "title": "Do I Wanna Know?",
+    "artist": "Arctic Monkeys",
+    "year": 2013
+  },
+  {
+    "title": "Love Yourself",
+    "artist": "Justin Bieber",
+    "year": 2015
+  },
+  {
+    "title": "Fancy",
+    "artist": "Twice",
+    "year": 2020
+  },
+  {
+    "title": "Truth Hurts",
+    "artist": "Lizzo",
+    "year": 2019
+  },
+  {
+    "title": "Redbone",
+    "artist": "Childish Gambino",
+    "year": 2016
+  },
+  {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "year": 2020
+  },
+  {
+    "title": "How Long",
+    "artist": "Charlie Puth",
+    "year": 2017
+  },
+  {
+    "title": "Ddu-Du Ddu-Du",
+    "artist": "BLACKPINK",
+    "year": 2018
+  },
+  {
+    "title": "Stressed Out",
+    "artist": "Twenty One Pilots",
+    "year": 2015
+  },
+  {
+    "title": "Blurred Lines",
+    "artist": "Robin Thicke ft. T.I. & Pharrell",
+    "year": 2013
+  },
+  {
+    "title": "Savage",
+    "artist": "Megan Thee Stallion",
+    "year": 2020
+  },
+  {
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "year": 2022
+  },
+  {
+    "title": "Shake It Off",
+    "artist": "Taylor Swift",
+    "year": 2014
+  },
+  {
+    "title": "IDOL",
+    "artist": "BTS",
+    "year": 2018
+  },
+  {
+    "title": "Take Me to Church",
+    "artist": "Hozier",
+    "year": 2013
+  },
+  {
+    "title": "abcdefu",
+    "artist": "GAYLE",
+    "year": 2021
+  },
+  {
+    "title": "Circles",
+    "artist": "Post Malone",
+    "year": 2019
+  },
+  {
+    "title": "Unforgettable",
+    "artist": "French Montana ft. Swae Lee",
+    "year": 2017
+  },
+  {
+    "title": "Flowers",
+    "artist": "Miley Cyrus",
+    "year": 2023
+  },
+  {
+    "title": "Savage Love",
+    "artist": "Jason Derulo",
+    "year": 2020
+  },
+  {
+    "title": "Bye Bye Bye",
+    "artist": "NSYNC",
+    "year": 2000
+  },
+  {
+    "title": "California Love",
+    "artist": "2Pac ft. Dr. Dre",
+    "year": 1995
+  },
+  {
+    "title": "Numb",
+    "artist": "Linkin Park",
+    "year": 2003
+  },
+  {
+    "title": "No Scrubs",
+    "artist": "TLC",
+    "year": 1999
+  },
+  {
+    "title": "I Want It That Way",
+    "artist": "Backstreet Boys",
+    "year": 1999
+  },
+  {
+    "title": "Ms. Jackson",
+    "artist": "OutKast",
+    "year": 2000
+  },
+  {
+    "title": "All The Small Things",
+    "artist": "Blink-182",
+    "year": 1999
+  },
+  {
+    "title": "Say My Name",
+    "artist": "Destiny's Child",
+    "year": 1999
+  },
+  {
+    "title": "Everybody (Backstreet's Back)",
+    "artist": "Backstreet Boys",
+    "year": 1997
+  },
+  {
+    "title": "Empire State of Mind",
+    "artist": "Jay-Z ft. Alicia Keys",
+    "year": 2009
+  },
+  {
+    "title": "Basket Case",
+    "artist": "Green Day",
+    "year": 1994
+  },
+  {
+    "title": "Waterfalls",
+    "artist": "TLC",
+    "year": 1995
+  },
+  {
+    "title": "This Love",
+    "artist": "Maroon 5",
+    "year": 2002
+  },
+  {
+    "title": "I'll Be Missing You",
+    "artist": "Puff Daddy & Faith Evans",
+    "year": 1997
+  },
+  {
+    "title": "Clocks",
+    "artist": "Coldplay",
+    "year": 2002
+  },
+  {
+    "title": "Crazy In Love",
+    "artist": "Beyoncé ft. Jay-Z",
+    "year": 2003
+  },
+  {
+    "title": "Boulevard of Broken Dreams",
+    "artist": "Green Day",
+    "year": 2004
+  },
+  {
+    "title": "Nuthin' But a 'G' Thang",
+    "artist": "Dr. Dre ft. Snoop Dogg",
+    "year": 1992
+  },
+  {
+    "title": "MMMBop",
+    "artist": "Hanson",
+    "year": 1997
+  },
+  {
+    "title": "Killing Me Softly",
+    "artist": "Fugees",
+    "year": 1996
+  },
+  {
+    "title": "Iris",
+    "artist": "Goo Goo Dolls",
+    "year": 1998
+  },
+  {
+    "title": "Poison",
+    "artist": "Bell Biv DeVoe",
+    "year": 1990
+  },
+  {
+    "title": "Bring Me To Life",
+    "artist": "Evanescence",
+    "year": 2003
+  },
+  {
+    "title": "It Wasn't Me",
+    "artist": "Shaggy ft. Rikrok",
+    "year": 2000
+  },
+  {
+    "title": "Semi-Charmed Life",
+    "artist": "Third Eye Blind",
+    "year": 1997
+  },
+  {
+    "title": "I Believe I Can Fly",
+    "artist": "R. Kelly",
+    "year": 1996
+  },
+  {
+    "title": "Sugar, We're Goin Down",
+    "artist": "Fall Out Boy",
+    "year": 2005
+  },
+  {
+    "title": "In Da Club",
+    "artist": "50 Cent",
+    "year": 2003
+  },
+  {
+    "title": "Fell in Love with a Girl",
+    "artist": "The White Stripes",
+    "year": 2001
+  },
+  {
+    "title": "Un-Break My Heart",
+    "artist": "Toni Braxton",
+    "year": 1996
+  },
+  {
+    "title": "Song 2",
+    "artist": "Blur",
+    "year": 1997
+  },
+  {
+    "title": "Doo Wop (That Thing)",
+    "artist": "Lauryn Hill",
+    "year": 1998
+  },
+  {
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "year": 2004
+  },
+  {
+    "title": "Hypnotize",
+    "artist": "The Notorious B.I.G.",
+    "year": 1997
+  },
+  {
+    "title": "Complicated",
+    "artist": "Avril Lavigne",
+    "year": 2002
+  },
+  {
+    "title": "This Is How We Do It",
+    "artist": "Montell Jordan",
+    "year": 1995
+  },
+  {
+    "title": "Everlong",
+    "artist": "Foo Fighters",
+    "year": 1997
+  },
+  {
+    "title": "Kiss from a Rose",
+    "artist": "Seal",
+    "year": 1994
+  },
+  {
+    "title": "Paper Planes",
+    "artist": "M.I.A.",
+    "year": 2007
+  },
+  {
+    "title": "End of the Road",
+    "artist": "Boyz II Men",
+    "year": 1992
+  },
+    {
+    "title": "Stayin' Alive",
+    "artist": "Bee Gees",
+    "year": 1977
+  },
+  {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "year": 1982
+  },
+  {
+    "title": "Sweet Dreams (Are Made of This)",
+    "artist": "Eurythmics",
+    "year": 1983
+  },
+  {
+    "title": "Superstition",
+    "artist": "Stevie Wonder",
+    "year": 1972
+  },
+  {
+    "title": "Take on Me",
+    "artist": "a-ha",
+    "year": 1985
+  },
+  {
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "year": 1976
+  },
+  {
+    "title": "Walk This Way",
+    "artist": "Aerosmith",
+    "year": 1975
+  },
+  {
+    "title": "Like a Prayer",
+    "artist": "Madonna",
+    "year": 1989
+  },
+  {
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "year": 1978
+  },
+  {
+    "title": "Purple Rain",
+    "artist": "Prince",
+    "year": 1984
+  },
+  {
+    "title": "Rocket Man",
+    "artist": "Elton John",
+    "year": 1972
+  },
+  {
+    "title": "Karma Chameleon",
+    "artist": "Culture Club",
+    "year": 1983
+  },
+  {
+    "title": "Heart of Glass",
+    "artist": "Blondie",
+    "year": 1979
+  },
+  {
+    "title": "Jump",
+    "artist": "Van Halen",
+    "year": 1984
+  },
+  {
+    "title": "Super Freak",
+    "artist": "Rick James",
+    "year": 1981
+  },
+  {
+    "title": "I Love Rock 'n' Roll",
+    "artist": "Joan Jett & the Blackhearts",
+    "year": 1981
+  },
+  {
+    "title": "Disco Inferno",
+    "artist": "The Trammps",
+    "year": 1976
+  },
+  {
+    "title": "The Boys of Summer",
+    "artist": "Don Henley",
+    "year": 1984
+  },
+  {
+    "title": "Rock the Boat",
+    "artist": "Hues Corporation",
+    "year": 1974
+  },
+  {
+    "title": "Tainted Love",
+    "artist": "Soft Cell",
+    "year": 1981
+  },
+  {
+    "title": "Layla",
+    "artist": "Derek and the Dominos",
+    "year": 1970
+  },
+  {
+    "title": "I Wanna Dance with Somebody",
+    "artist": "Whitney Houston",
+    "year": 1987
+  },
+  {
+    "title": "Highway to Hell",
+    "artist": "AC/DC",
+    "year": 1979
+  },
+  {
+    "title": "Faith",
+    "artist": "George Michael",
+    "year": 1987
+  },
+  {
+    "title": "Night Fever",
+    "artist": "Bee Gees",
+    "year": 1977
+  },
+  {
+    "title": "Material Girl",
+    "artist": "Madonna",
+    "year": 1984
+  },
+  {
+    "title": "Le Freak",
+    "artist": "Chic",
+    "year": 1978
+  },
+  {
+    "title": "Every Breath You Take",
+    "artist": "The Police",
+    "year": 1983
+  },
+  {
+    "title": "You're the One That I Want",
+    "artist": "John Travolta & Olivia Newton-John",
+    "year": 1978
+  },
+  {
+    "title": "Eye of the Tiger",
+    "artist": "Survivor",
+    "year": 1982
+  },
+  {
+    "title": "Roxanne",
+    "artist": "The Police",
+    "year": 1978
+  },
+  {
+    "title": "Walk Like an Egyptian",
+    "artist": "The Bangles",
+    "year": 1986
+  },
+  {
+    "title": "I Feel Love",
+    "artist": "Donna Summer",
+    "year": 1977
+  },
+  {
+    "title": "Message in a Bottle",
+    "artist": "The Police",
+    "year": 1979
+  },
+  {
+    "title": "Flashdance... What a Feeling",
+    "artist": "Irene Cara",
+    "year": 1983
+  },
+  {
+    "title": "Bette Davis Eyes",
+    "artist": "Kim Carnes",
+    "year": 1981
+  },
+  {
+    "title": "Ring My Bell",
+    "artist": "Anita Ward",
+    "year": 1979
+  },
+  {
+    "title": "Girls Just Want to Have Fun",
+    "artist": "Cyndi Lauper",
+    "year": 1983
+  },
+  {
+    "title": "Born to Run",
+    "artist": "Bruce Springsteen",
+    "year": 1975
+  },
+  {
+    "title": "Jessie's Girl",
+    "artist": "Rick Springfield",
+    "year": 1981
+  },
+  {
+    "title": "Johnny B. Goode",
+    "artist": "Chuck Berry",
+    "year": 1958
+  },
+  {
+    "title": "I Want to Hold Your Hand",
+    "artist": "The Beatles",
+    "year": 1963
+  },
+  {
+    "title": "Hound Dog",
+    "artist": "Elvis Presley",
+    "year": 1956
+  },
+  {
+    "title": "Good Vibrations",
+    "artist": "The Beach Boys",
+    "year": 1966
+  },
+  {
+    "title": "Heartbreak Hotel",
+    "artist": "Elvis Presley",
+    "year": 1956
+  },
+  {
+    "title": "My Girl",
+    "artist": "The Temptations",
+    "year": 1964
+  },
+  {
+    "title": "Earth Angel",
+    "artist": "The Penguins",
+    "year": 1954
+  },
+  {
+    "title": "A Change Is Gonna Come",
+    "artist": "Sam Cooke",
+    "year": 1964
+  },
+  {
+    "title": "Rock Around the Clock",
+    "artist": "Bill Haley & His Comets",
+    "year": 1954
+  },
+  {
+    "title": "House of the Rising Sun",
+    "artist": "The Animals",
+    "year": 1964
+  },
+  {
+    "title": "At Last",
+    "artist": "Etta James",
+    "year": 1960
+  },
+  {
+    "title": "I Got You (I Feel Good)",
+    "artist": "James Brown",
+    "year": 1965
+  },
+  {
+    "title": "Great Balls of Fire",
+    "artist": "Jerry Lee Lewis",
+    "year": 1957
+  },
+  {
+    "title": "Respect",
+    "artist": "Aretha Franklin",
+    "year": 1967
+  },
+  {
+    "title": "Tutti Frutti",
+    "artist": "Little Richard",
+    "year": 1955
+  },
+  {
+    "title": "Satisfaction",
+    "artist": "The Rolling Stones",
+    "year": 1965
+  },
+  {
+    "title": "Blue Suede Shoes",
+    "artist": "Carl Perkins",
+    "year": 1956
+  },
+  {
+    "title": "Like a Rolling Stone",
+    "artist": "Bob Dylan",
+    "year": 1965
+  },
+  {
+    "title": "Jailhouse Rock",
+    "artist": "Elvis Presley",
+    "year": 1957
+  },
+  {
+    "title": "California Dreamin'",
+    "artist": "The Mamas & the Papas",
+    "year": 1965
+  },
+  {
+    "title": "Why Do Fools Fall in Love",
+    "artist": "Frankie Lymon & The Teenagers",
+    "year": 1956
+  },
+  {
+    "title": "Purple Haze",
+    "artist": "Jimi Hendrix",
+    "year": 1967
+  },
+  {
+    "title": "La Bamba",
+    "artist": "Ritchie Valens",
+    "year": 1958
+  },
+  {
+    "title": "Light My Fire",
+    "artist": "The Doors",
+    "year": 1967
+  },
+  {
+    "title": "That'll Be the Day",
+    "artist": "Buddy Holly",
+    "year": 1957
+  },
+  {
+    "title": "Dancing in the Street",
+    "artist": "Martha and the Vandellas",
+    "year": 1964
+  },
+  {
+    "title": "Maybelline",
+    "artist": "Chuck Berry",
+    "year": 1955
+  },
+  {
+    "title": "Gimme Shelter",
+    "artist": "The Rolling Stones",
+    "year": 1969
+  },
+  {
+    "title": "Dream Lover",
+    "artist": "Bobby Darin",
+    "year": 1959
+  },
+  {
+    "title": "Fortunate Son",
+    "artist": "Creedence Clearwater Revival",
+    "year": 1969
+  },
+  {
+    "title": "Wake Up Little Susie",
+    "artist": "The Everly Brothers",
+    "year": 1957
+  },
+  {
+    "title": "Ain't No Mountain High Enough",
+    "artist": "Marvin Gaye & Tammi Terrell",
+    "year": 1967
+  },
+  {
+    "title": "Johnny Angel",
+    "artist": "Shelley Fabares",
+    "year": 1962
+  },
+  {
+    "title": "Mr. Tambourine Man",
+    "artist": "The Byrds",
+    "year": 1965
+  },
+  {
+    "title": "Love Me Tender",
+    "artist": "Elvis Presley",
+    "year": 1956
+  },
+  {
+    "title": "Son of a Preacher Man",
+    "artist": "Dusty Springfield",
+    "year": 1968
+  },
+  {
+    "title": "Diana",
+    "artist": "Paul Anka",
+    "year": 1957
+  },
+  {
+    "title": "A Hard Day's Night",
+    "artist": "The Beatles",
+    "year": 1964
+  },
+  {
+    "title": "Only the Lonely",
+    "artist": "Roy Orbison",
+    "year": 1960
+  },
+  {
+    "title": "Proud Mary",
+    "artist": "Creedence Clearwater Revival",
+    "year": 1969
+  },
+  {
+    "title": "Sukiyaki",
+    "artist": "Kyu Sakamoto",
+    "year": 1963
+  },
+  {
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "year": 1976
+  },
+  {
+    "title": "99 Luftballons",
+    "artist": "Nena",
+    "year": 1983
+  },
+  {
+    "title": "La Bamba",
+    "artist": "Ritchie Valens",
+    "year": 1958
+  },
+  {
+    "title": "The Girl from Ipanema",
+    "artist": "Astrud Gilberto & Stan Getz",
+    "year": 1964
+  },
+  {
+    "title": "La Vie en Rose",
+    "artist": "Édith Piaf",
+    "year": 1947
+  },
+  {
+    "title": "Nel Blu Dipinto Di Blu (Volare)",
+    "artist": "Domenico Modugno",
+    "year": 1958
+  },
+  {
+    "title": "Take Me Home, Country Roads",
+    "artist": "John Denver",
+    "year": 1971
+  },
+  {
+    "title": "One Love",
+    "artist": "Bob Marley & The Wailers",
+    "year": 1977
+  },
+  {
+    "title": "Yellow Submarine",
+    "artist": "The Beatles",
+    "year": 1966
+  },
+  {
+    "title": "Gasolina",
+    "artist": "Daddy Yankee",
+    "year": 2004
+  },
+  {
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "year": 1994
+  },
+  {
+    "title": "Dragostea Din Tei",
+    "artist": "O-Zone",
+    "year": 2003
+  },
+  {
+    "title": "Macarena",
+    "artist": "Los Del Rio",
+    "year": 1993
+  },
+  {
+    "title": "Kung Fu Fighting",
+    "artist": "Carl Douglas",
+    "year": 1974
+  },
+  {
+    "title": "It's Now or Never",
+    "artist": "Elvis Presley",
+    "year": 1960
+  },
+  {
+    "title": "Rock Me Amadeus",
+    "artist": "Falco",
+    "year": 1985
+  },
+  {
+    "title": "Bamboleo",
+    "artist": "Gipsy Kings",
+    "year": 1987
+  },
+  {
+    "title": "Con Te Partirò",
+    "artist": "Andrea Bocelli",
+    "year": 1995
+  },
+  {
+    "title": "Guantanamera",
+    "artist": "The Sandpipers",
+    "year": 1966
+  },
+  {
+    "title": "Aicha",
+    "artist": "Khaled",
+    "year": 1996
+  },
+  {
+    "title": "Oye Como Va",
+    "artist": "Santana",
+    "year": 1970
+  },
+  {
+    "title": "Ue o Muite Arukō",
+    "artist": "Kyu Sakamoto",
+    "year": 1961
+  },
+  {
+    "title": "Chan Chan",
+    "artist": "Buena Vista Social Club",
+    "year": 1997
+  },
+  {
+    "title": "Cielito Lindo",
+    "artist": "Pedro Infante",
+    "year": 1950
+  },
+  {
+    "title": "Waka Waka (This Time for Africa)",
+    "artist": "Shakira",
+    "year": 2010
+  },
+  {
+    "title": "Livin' la Vida Loca",
+    "artist": "Ricky Martin",
+    "year": 1999
+  },
+  {
+    "title": "Felicità",
+    "artist": "Al Bano & Romina Power",
+    "year": 1982
+  },
+  {
+    "title": "Je T'aime... Moi Non Plus",
+    "artist": "Serge Gainsbourg & Jane Birkin",
+    "year": 1969
+  },
+  {
+    "title": "Katyusha",
+    "artist": "Red Army Choir",
+    "year": 1938
+  },
+  {
+    "title": "Orinoco Flow",
+    "artist": "Enya",
+    "year": 1988
+  },
+  {
+    "title": "Mamma Mia",
+    "artist": "ABBA",
+    "year": 1975
+  },
+  {
+    "title": "Lambada",
+    "artist": "Kaoma",
+    "year": 1989
+  },
+  {
+    "title": "Bésame Mucho",
+    "artist": "Consuelo Velázquez",
+    "year": 1940
+  },
+  {
+    "title": "Gangnam Style",
+    "artist": "PSY",
+    "year": 2012
+  },
+  {
+    "title": "Tutti Frutti",
+    "artist": "Little Richard",
+    "year": 1955
+  },
+  {
+    "title": "La Isla Bonita",
+    "artist": "Madonna",
+    "year": 1987
+  },
+  {
+    "title": "Águas de Março",
+    "artist": "Elis Regina & Tom Jobim",
+    "year": 1974
+  },
+  {
+    "title": "Biko",
+    "artist": "Peter Gabriel",
+    "year": 1980
+  },
+  {
+    "title": "Plastic Love",
+    "artist": "Mariya Takeuchi",
+    "year": 1984
+  },
+  {
+    "title": "The Ketchup Song",
+    "artist": "Las Ketchup",
+    "year": 2002
+  },
+  {
+    "title": "Adios Amigos",
+    "artist": "Ricky Martin",
+    "year": 1993
+  },
+  {
+    "title": "I Was Made For Lovin' You",
+    "artist": "KISS",
+    "year": 1979
+  },
+  {
+    "title": "Bamboleo",
+    "artist": "Gipsy Kings",
+    "year": 1987
+  },
+  {
+    "title": "Sandstorm",
+    "artist": "Darude",
+    "year": 2000
+  },
+  {
+    "title": "Jai Ho",
+    "artist": "A.R. Rahman",
+    "year": 2008
+  },
+  {
+    "title": "Sweet Lullaby",
+    "artist": "Deep Forest",
+    "year": 1992
+  },
+  {
+    "title": "Mas Que Nada",
+    "artist": "Sergio Mendes & Brasil '66",
+    "year": 1966
+  },
+  {
+    "title": "Down Under",
+    "artist": "Men At Work",
+    "year": 1981
+  },
+  {
+    "title": "Tunak Tunak Tun",
+    "artist": "Daler Mehndi",
+    "year": 1998
+  },
+  {
+    "title": "Mo Li Hua",
+    "artist": "Song Zuying",
+    "year": 2004
+  },
+  {
+    "title": "Eurovision Song Contest",
+    "artist": "ABBA",
+    "year": 1974
+  },
+  {
+    "title": "C'est la Vie",
+    "artist": "Khaled",
+    "year": 1997
+  },
+  {
+    "title": "99 Red Balloons",
+    "artist": "Nena",
+    "year": 1984
+  },
+  {
+    "title": "Hips Don't Lie",
+    "artist": "Shakira ft. Wyclef Jean",
+    "year": 2006
+  },
+  {
+    "title": "Lagos Gyration",
+    "artist": "King Sunny Ade",
+    "year": 1982
+  },
+  {
+    "title": "Turn Your Lights Down Low",
+    "artist": "Bob Marley & The Wailers",
+    "year": 1977
+  },
+  {
+    "title": "Desafinado",
+    "artist": "João Gilberto",
+    "year": 1959
+  },
+  {
+    "title": "Chan Chan",
+    "artist": "Buena Vista Social Club",
+    "year": 1997
+  },
+  {
+    "title": "Samba Pa Ti",
+    "artist": "Santana",
+    "year": 1970
+  },
+  {
+    "title": "O Sole Mio",
+    "artist": "Luciano Pavarotti",
+    "year": 1980
+  },
+  {
+    "title": "Suavemente",
+    "artist": "Elvis Crespo",
+    "year": 1998
+  },
+  {
+    "title": "Kyoto Song",
+    "artist": "The Cure",
+    "year": 1985
+  },
+  {
+    "title": "La Tortura",
+    "artist": "Shakira ft. Alejandro Sanz",
+    "year": 2005
+  },
+  {
+    "title": "Chaiyya Chaiyya",
+    "artist": "Sukhwinder Singh & Sapna Awasthi",
+    "year": 1998
+  },
+  {
+    "title": "My Heart Will Go On",
+    "artist": "Celine Dion",
+    "year": 1997
+  },
+  {
+    "title": "Lady Marmalade",
+    "artist": "Labelle",
+    "year": 1974
+  },
+  {
+    "title": "Unchained Melody",
+    "artist": "The Righteous Brothers",
+    "year": 1965
+  },
+  {
+    "title": "Whenever, Wherever",
+    "artist": "Shakira",
+    "year": 2001
+  },
+  {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "year": 1969
+  },
+  {
+    "title": "Misirlou",
+    "artist": "Dick Dale",
+    "year": 1962
+  },
+  {
+    "title": "Hale Hale",
+    "artist": "King Sunny Ade",
+    "year": 1974
+  },
+  {
+    "title": "Cherry Pink and Apple Blossom White",
+    "artist": "Pérez Prado",
+    "year": 1955
+  },
+  {
+    "title": "Gangnam Style",
+    "artist": "PSY",
+    "year": 2012
+  },
+  {
+    "title": "Butterfly",
+    "artist": "Smile.dk",
+    "year": 1998
+  },
+  {
+    "title": "Kiss Kiss",
+    "artist": "Tarkan",
+    "year": 1997
+  },
+  {
+    "title": "Kolaveri Di",
+    "artist": "Dhanush",
+    "year": 2011
+  },
+  {
+    "title": "St. Louis Blues",
+    "artist": "W.C. Handy",
+    "year": 1914
+  },
+  {
+    "title": "Alexander's Ragtime Band",
+    "artist": "Irving Berlin",
+    "year": 1911
+  },
+  {
+    "title": "Stardust",
+    "artist": "Hoagy Carmichael",
+    "year": 1927
+  },
+  {
+    "title": "When the Saints Go Marching In",
+    "artist": "Louis Armstrong",
+    "year": 1938
+  },
+  {
+    "title": "Maple Leaf Rag",
+    "artist": "Scott Joplin",
+    "year": 1900
+  },
+  {
+    "title": "Strange Fruit",
+    "artist": "Billie Holiday",
+    "year": 1939
+  },
+  {
+    "title": "Ain't Misbehavin'",
+    "artist": "Fats Waller",
+    "year": 1929
+  },
+  {
+    "title": "Over There",
+    "artist": "Enrico Caruso",
+    "year": 1917
+  },
+  {
+    "title": "In the Mood",
+    "artist": "Glenn Miller Orchestra",
+    "year": 1939
+  },
+  {
+    "title": "Rhapsody in Blue",
+    "artist": "George Gershwin",
+    "year": 1924
+  },
+  {
+    "title": "Minnie the Moocher",
+    "artist": "Cab Calloway",
+    "year": 1931
+  },
+  {
+    "title": "Take the 'A' Train",
+    "artist": "Duke Ellington",
+    "year": 1941
+  },
+  {
+    "title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+    "artist": "Duke Ellington",
+    "year": 1932
+  },
+  {
+    "title": "Mood Indigo",
+    "artist": "Duke Ellington",
+    "year": 1930
+  },
+  {
+    "title": "La Cumparsita",
+    "artist": "Roberto Firpo",
+    "year": 1916
+  },
+  {
+    "title": "Singin' in the Rain",
+    "artist": "Cliff Edwards",
+    "year": 1929
+  },
+  {
+    "title": "I Got Rhythm",
+    "artist": "Ethel Merman",
+    "year": 1930
+  },
+  {
+    "title": "Stormy Weather",
+    "artist": "Ethel Waters",
+    "year": 1933
+  },
+  {
+    "title": "Brother, Can You Spare a Dime?",
+    "artist": "Bing Crosby",
+    "year": 1932
+  },
+  {
+    "title": "White Christmas",
+    "artist": "Bing Crosby",
+    "year": 1942
+  },
+  {
+    "title": "Summertime",
+    "artist": "Billie Holiday",
+    "year": 1936
+  },
+  {
+    "title": "Body and Soul",
+    "artist": "Coleman Hawkins",
+    "year": 1939
+  },
+  {
+    "title": "That's Amore",
+    "artist": "Dean Martin",
+    "year": 1950
+  },
+  {
+    "title": "Sing, Sing, Sing",
+    "artist": "Benny Goodman",
+    "year": 1937
+  },
+  {
+    "title": "God Bless America",
+    "artist": "Kate Smith",
+    "year": 1938
+  },
+  {
+    "title": "Boogie Woogie Bugle Boy",
+    "artist": "The Andrews Sisters",
+    "year": 1941
+  },
+  {
+    "title": "Bei Mir Bist Du Schön",
+    "artist": "The Andrews Sisters",
+    "year": 1937
+  },
+  {
+    "title": "The Entertainer",
+    "artist": "Scott Joplin",
+    "year": 1902
+  },
+  {
+    "title": "Some of These Days",
+    "artist": "Sophie Tucker",
+    "year": 1911
+  },
+  {
+    "title": "Puttin' On the Ritz",
+    "artist": "Fred Astaire",
+    "year": 1930
+  },
+  {
+    "title": "You Made Me Love You",
+    "artist": "Al Jolson",
+    "year": 1913
+  },
+  {
+    "title": "The Sheik of Araby",
+    "artist": "Ted Lewis",
+    "year": 1921
+  },
+  {
+    "title": "Sh-Boom",
+    "artist": "The Chords",
+    "year": 1950
+  },
+  {
+    "title": "La Vie en Rose",
+    "artist": "Édith Piaf",
+    "year": 1945
+  },
+  {
+    "title": "Begin the Beguine",
+    "artist": "Artie Shaw",
+    "year": 1938
+  },
+  {
+    "title": "Mack the Knife",
+    "artist": "Lotte Lenya",
+    "year": 1928
+  },
+  {
+    "title": "Deep in the Heart of Texas",
+    "artist": "Bing Crosby",
+    "year": 1942
+  },
+  {
+    "title": "Swanee",
+    "artist": "Al Jolson",
+    "year": 1919
+  },
+  {
+    "title": "Fascinating Rhythm",
+    "artist": "Fred Astaire",
+    "year": 1924
+  },
+  {
+    "title": "My Blue Heaven",
+    "artist": "Gene Austin",
+    "year": 1927
+  },
+  {
+    "title": "I'll Be Seeing You",
+    "artist": "Bing Crosby",
+    "year": 1944
+  },
+  {
+    "title": "Mona Lisa",
+    "artist": "Nat King Cole",
+    "year": 1950
+  },
+  {
+    "title": "Let Me Call You Sweetheart",
+    "artist": "The Peerless Quartet",
+    "year": 1910
+  },
+  {
+    "title": "Buttons and Bows",
+    "artist": "Dinah Shore",
+    "year": 1948
+  },
+  {
+    "title": "Dream a Little Dream of Me",
+    "artist": "Ozzie Nelson",
+    "year": 1931
+  },
+  {
+    "title": "Ol' Man River",
+    "artist": "Paul Robeson",
+    "year": 1936
+  },
+  {
+    "title": "My Man",
+    "artist": "Fanny Brice",
+    "year": 1921
+  },
+  {
+    "title": "The Way You Look Tonight",
+    "artist": "Fred Astaire",
+    "year": 1936
+  },
+  {
+    "title": "After You've Gone",
+    "artist": "Marion Harris",
+    "year": 1918
+  },
+  {
+    "title": "Three Little Words",
+    "artist": "Duke Ellington",
+    "year": 1930
+  },
+  {
+    "title": "Smoke Gets in Your Eyes",
+    "artist": "Paul Whiteman Orchestra",
+    "year": 1933
+  },
+  {
+    "title": "Night and Day",
+    "artist": "Fred Astaire",
+    "year": 1932
+  },
+  {
+    "title": "Paper Doll",
+    "artist": "The Mills Brothers",
+    "year": 1943
+  },
+  {
+    "title": "Embraceable You",
+    "artist": "Billie Holiday",
+    "year": 1944
+  },
+  {
+    "title": "Carolina in the Morning",
+    "artist": "Al Jolson",
+    "year": 1922
+  },
+  {
+    "title": "Blue Moon",
+    "artist": "Benny Goodman",
+    "year": 1935
+  },
+  {
+    "title": "Don't Fence Me In",
+    "artist": "Bing Crosby",
+    "year": 1944
+  },
+  {
+    "title": "Tiger Rag",
+    "artist": "Original Dixieland Jazz Band",
+    "year": 1917
+  },
+  {
+    "title": "Heartaches",
+    "artist": "Ted Weems",
+    "year": 1947
+  },
+  {
+    "title": "Nature Boy",
+    "artist": "Nat King Cole",
+    "year": 1948
+  },
+  {
+    "title": "A Love Supreme, Pt. 1: Acknowledgement",
+    "artist": "John Coltrane",
+    "year": 1965
+  },
+  {
+    "title": "Giant Steps",
+    "artist": "John Coltrane",
+    "year": 1960
+  },
+  {
+    "title": "Donna Lee",
+    "artist": "Charlie Parker",
+    "year": 1947
+  },
+  {
+    "title": "Round Midnight",
+    "artist": "Thelonious Monk",
+    "year": 1944
+  },
+  {
+    "title": "Master of Puppets",
+    "artist": "Metallica",
+    "year": 1986
+  },
+  {
+    "title": "Seasons in the Abyss",
+    "artist": "Slayer",
+    "year": 1990
+  },
+  {
+    "title": "New Millennium Cyanide Christ",
+    "artist": "Meshuggah",
+    "year": 1998
+  },
+  {
+    "title": "Bleed",
+    "artist": "Meshuggah",
+    "year": 2008
+  },
+  {
+    "title": "Scarlet",
+    "artist": "Periphery",
+    "year": 2012
+  },
+  {
+    "title": "Streets of Bakersfield",
+    "artist": "Buck Owens",
+    "year": 1973
+  },
+  {
+    "title": "Blue Yodel No. 1 (T for Texas)",
+    "artist": "Jimmie Rodgers",
+    "year": 1927
+  },
+  {
+    "title": "Ponle Reggaeton",
+    "artist": "Nicky Jam",
+    "year": 2015
+  },
+  {
+    "title": "La Tortura",
+    "artist": "Shakira ft. Alejandro Sanz",
+    "year": 2005
+  },
+  {
+    "title": "Gashina",
+    "artist": "Sunmi",
+    "year": 2017
+  },
+  {
+    "title": "Love Shot",
+    "artist": "EXO",
+    "year": 2018
+  },
+  {
+    "title": "BOSS",
+    "artist": "NCT U",
+    "year": 2018
+  },
+  {
+    "title": "Slow Motion",
+    "artist": "TREASURE",
+    "year": 2023
+  },
+  {
+    "title": "Adoration",
+    "artist": "Florence Price",
+    "year": 1951
+  },
+  {
+    "title": "The Chairman Dances",
+    "artist": "John Adams",
+    "year": 1985
+  },
+  {
+    "title": "Fratres",
+    "artist": "Arvo Pärt",
+    "year": 1977
+  },
+  {
+    "title": "The Protecting Veil",
+    "artist": "John Tavener",
+    "year": 1988
+  },
+  {
+    "title": "Cliffs of Dover",
+    "artist": "Eric Johnson",
+    "year": 1990
+  },
+  {
+    "title": "Little Martha",
+    "artist": "The Allman Brothers Band",
+    "year": 1972
+  },
+  {
+    "title": "The Lark Ascending",
+    "artist": "Ralph Vaughan Williams",
+    "year": 1920
+  },
+  {
+    "title": "Scarborough Fair",
+    "artist": "Simon & Garfunkel",
+    "year": 1966
+  },
+  {
+    "title": "The Water is Wide",
+    "artist": "Pete Seeger",
+    "year": 1960
+  },
+  {
+    "title": "The Foggy Dew",
+    "artist": "The Dubliners",
+    "year": 1966
+  },
+  {
+    "title": "Shenandoah",
+    "artist": "Tennessee Ernie Ford",
+    "year": 1959
+  },
+  {
+    "title": "Maria durch ein Dornwald ging",
+    "artist": "Annette Postel",
+    "year": 1990
+  },
+  {
+    "title": "Silent Night",
+    "artist": "Bing Crosby",
+    "year": 1935
+  },
+  {
+    "title": "A Holly Jolly Christmas",
+    "artist": "Burl Ives",
+    "year": 1964
+  },
+  {
+    "title": "Fairytale of New York",
+    "artist": "The Pogues ft. Kirsty MacColl",
+    "year": 1987
+  },
+  {
+    "title": "Do They Know It's Christmas?",
+    "artist": "Band Aid",
+    "year": 1984
+  },
+  {
+    "title": "Carol of the Bells",
+    "artist": "The Mormon Tabernacle Choir",
+    "year": 1963
+  },
+  {
+    "title": "Bhaag D.K. Bose",
+    "artist": "Ram Sampath",
+    "year": 2011
+  },
+  {
+    "title": "Chaiyya Chaiyya",
+    "artist": "Sukhwinder Singh & Sapna Awasthi",
+    "year": 1998
+  },
+  {
+    "title": "Tujhe Dekha To",
+    "artist": "Kumar Sanu & Lata Mangeshkar",
+    "year": 1995
+  },
+  {
+    "title": "Maahi Ve",
+    "artist": "A.R. Rahman",
+    "year": 2002
+  },
+  {
+    "title": "Kun Faya Kun",
+    "artist": "A.R. Rahman, Javed Ali & Mohit Chauhan",
+    "year": 2011
+  },
+  {
+    "title": "Lovesong",
+    "artist": "The Cure",
+    "year": 1989
+  },
+  {
+    "title": "Alison",
+    "artist": "Slowdive",
+    "year": 1993
+  },
+  {
+    "title": "When You Sleep",
+    "artist": "My Bloody Valentine",
+    "year": 1991
+  },
+  {
+    "title": "She Found Now",
+    "artist": "My Bloody Valentine",
+    "year": 2013
+  },
+  {
+    "title": "Only Shallow",
+    "artist": "My Bloody Valentine",
+    "year": 1991
+  },
+  {
+    "title": "Nessun Dorma",
+    "artist": "Luciano Pavarotti",
+    "year": 1990
+  },
+  {
+    "title": "La donna è mobile",
+    "artist": "Enrico Caruso",
+    "year": 1907
+  },
+  {
+    "title": "O mio babbino caro",
+    "artist": "Maria Callas",
+    "year": 1955
+  },
+  {
+    "title": "Un bel dì vedremo",
+    "artist": "Renata Tebaldi",
+    "year": 1951
+  },
+  {
+    "title": "Der Hölle Rache",
+    "artist": "Diana Damrau",
+    "year": 2007
+  },
+  {
+    "title": "Águas de Março",
+    "artist": "Elis Regina & Tom Jobim",
+    "year": 1974
+  },
+  {
+    "title": "Desafinado",
+    "artist": "Stan Getz & João Gilberto",
+    "year": 1963
+  },
+  {
+    "title": "Chega de Saudade",
+    "artist": "João Gilberto",
+    "year": 1959
+  },
+  {
+    "title": "Corcovado",
+    "artist": "Astrud Gilberto",
+    "year": 1964
+  },
+  {
+    "title": "Wave",
+    "artist": "Antonio Carlos Jobim",
+    "year": 1967
+  },
+  {
+    "title": "Strobe",
+    "artist": "deadmau5",
+    "year": 2009
+  },
+  {
+    "title": "Opus",
+    "artist": "Eric Prydz",
+    "year": 2015
+  },
+  {
+    "title": "Windowlicker",
+    "artist": "Aphex Twin",
+    "year": 1999
+  },
+  {
+    "title": "Blue Monday",
+    "artist": "New Order",
+    "year": 1983
+  },
+  {
+    "title": "Breathing",
+    "artist": "Apex Twin",
+    "year": 2014
+  },
+  {
+    "title": "Jesus, etc.",
+    "artist": "Wilco",
+    "year": 2002
+  },
+  {
+    "title": "Fake Plastic Trees",
+    "artist": "Radiohead",
+    "year": 1995
+  },
+  {
+    "title": "Your Hand in Mine",
+    "artist": "Explosions in the Sky",
+    "year": 2003
+  },
+  {
+    "title": "Storm",
+    "artist": "Godspeed You! Black Emperor",
+    "year": 2000
+  },
+  {
+    "title": "The Birth and Death of the Day",
+    "artist": "Explosions in the Sky",
+    "year": 2007
+  },
+  {
+    "title": "Spottieottiedopaliscious",
+    "artist": "OutKast",
+    "year": 1998
+  },
+  {
+    "title": "The Message",
+    "artist": "Grandmaster Flash & The Furious Five",
+    "year": 1982
+  },
+  {
+    "title": "NY State of Mind",
+    "artist": "Nas",
+    "year": 1994
+  },
+  {
+    "title": "C.R.E.A.M.",
+    "artist": "Wu-Tang Clan",
+    "year": 1993
+  },
+  {
+    "title": "Scenario",
+    "artist": "A Tribe Called Quest",
+    "year": 1991
+  },
+  {
+    "title": "Cross Road Blues",
+    "artist": "Robert Johnson",
+    "year": 1937
+  },
+  {
+    "title": "Smokestack Lightning",
+    "artist": "Howlin' Wolf",
+    "year": 1956
+  },
+  {
+    "title": "I'd Rather Go Blind",
+    "artist": "Etta James",
+    "year": 1968
+  },
+  {
+    "title": "Spoonful",
+    "artist": "Willie Dixon",
+    "year": 1960
+  },
+  {
+    "title": "Mannish Boy",
+    "artist": "Muddy Waters",
+    "year": 1955
+  },
+  {
+    "title": "A Change Is Gonna Come",
+    "artist": "Sam Cooke",
+    "year": 1964
+  },
+  {
+    "title": "Respect",
+    "artist": "Aretha Franklin",
+    "year": 1967
+  },
+  {
+    "title": "I Heard It Through the Grapevine",
+    "artist": "Marvin Gaye",
+    "year": 1968
+  },
+  {
+    "title": "Try a Little Tenderness",
+    "artist": "Otis Redding",
+    "year": 1966
+  },
+  {
+    "title": "What's Going On",
+    "artist": "Marvin Gaye",
+    "year": 1971
+  },
+  {
+    "title": "Mercy Mercy Me (The Ecology)",
+    "artist": "Marvin Gaye",
+    "year": 1971
+  },
+  {
+    "title": "People Get Ready",
+    "artist": "The Impressions",
+    "year": 1965
+  },
+  {
+    "title": "At Last",
+    "artist": "Etta James",
+    "year": 1960
+  },
+  {
+    "title": "Stand By Me",
+    "artist": "Ben E. King",
+    "year": 1961
+  },
+  {
+    "title": "99 Luftballons",
+    "artist": "Nena",
+    "year": 1983
+  },
+  {
+    "title": "Dragostea Din Tei",
+    "artist": "O-Zone",
+    "year": 2003
+  },
+  {
+    "title": "Alors on danse",
+    "artist": "Stromae",
+    "year": 2009
+  },
+  {
+    "title": "Quelqu'un m'a dit",
+    "artist": "Carla Bruni",
+    "year": 2002
+  },
+  {
+    "title": "Soldi",
+    "artist": "Mahmood",
+    "year": 2019
+  },
+  {
+    "title": "Despacito",
+    "artist": "Luis Fonsi ft. Daddy Yankee",
+    "year": 2017
+  },
+  {
+    "title": "Gasolina",
+    "artist": "Daddy Yankee",
+    "year": 2004
+  },
+  {
+    "title": "Danza Kuduro",
+    "artist": "Don Omar ft. Lucenzo",
+    "year": 2010
+  },
+  {
+    "title": "Baila Morena",
+    "artist": "Zion & Lennox",
+    "year": 2004
+  },
+  {
+    "title": "Suavemente",
+    "artist": "Elvis Crespo",
+    "year": 1998
+  },
+  {
+    "title": "Butterfly",
+    "artist": "Crazy Town",
+    "year": 1999
+  },
+  {
+    "title": "Roses",
+    "artist": "OutKast",
+    "year": 2003
+  },
+  {
+    "title": "Diablo Rojo",
+    "artist": "Rodrigo y Gabriela",
+    "year": 2006
+  },
+  {
+    "title": "Merry Christmas, Mr. Lawrence",
+    "artist": "Ryuichi Sakamoto",
+    "year": 1983
+  },
+  {
+    "title": "He Was Despised",
+    "artist": "Kathleen Ferrier",
+    "year": 1944
+  },
+  {
+    "title": "The Rite of Spring",
+    "artist": "Igor Stravinsky",
+    "year": 1913
+  },
+  {
+    "title": "A Moment Apart",
+    "artist": "ODESZA",
+    "year": 2017
+  },
+  {
+    "title": "Dreams",
+    "artist": "Nuages",
+    "year": 2014
+  },
+  {
+    "title": "Finally Moving",
+    "artist": "Pretty Lights",
+    "year": 2006
+  },
+  {
+    "title": "Wildfire",
+    "artist": "SBTRKT ft. Little Dragon",
+    "year": 2011
+  },
+  {
+    "title": "Limit To Your Love",
+    "artist": "James Blake",
+    "year": 2010
+  },
+  {
+    "title": "Daylight",
+    "artist": "Coldcut & Jovonn",
+    "year": 2018
+  },
+  {
+    "title": "Teardrop",
+    "artist": "Massive Attack",
+    "year": 1998
+  },
+  {
+    "title": "Inner Light",
+    "artist": "Elderbrook & Bob Moses",
+    "year": 2021
+  },
+  {
+    "title": "Angel",
+    "artist": "Massive Attack",
+    "year": 1998
+  },
+  {
+    "title": "Glory Box",
+    "artist": "Portishead",
+    "year": 1994
+  },
+  {
+    "title": "Untrue",
+    "artist": "Burial",
+    "year": 2007
+  },
+  {
+    "title": "Torn",
+    "artist": "Natalie Imbruglia",
+    "year": 1997
+  },
+  {
+    "title": "Mouldy Old Dough",
+    "artist": "Lieutenant Pigeon",
+    "year": 1972
+  },
+  {
+    "title": "The Rockafeller Skank",
+    "artist": "Fatboy Slim",
+    "year": 1998
+  },
+  {
+    "title": "Mal Bicho",
+    "artist": "Los Fabulosos Cadillacs",
+    "year": 1995
+  },
+  {
+    "title": "Layla",
+    "artist": "Derek and the Dominos",
+    "year": 1970
+  },
+  {
+    "title": "Freak on a Leash",
+    "artist": "Korn",
+    "year": 1998
+  },
+  {
+    "title": "Comment te dire adieu",
+    "artist": "Françoise Hardy",
+    "year": 1968
+  },
+  {
+    "title": "Aziza",
+    "artist": "Ali Farka Touré",
+    "year": 1993
+  },
+  {
+    "title": "Malaika",
+    "artist": "Miriam Makeba",
+    "year": 1974
+  },
+  {
+    "title": "Yeke Yeke",
+    "artist": "Mory Kanté",
+    "year": 1987
+  },
+  {
+    "title": "Jerusalem",
+    "artist": "Ofra Haza",
+    "year": 1997
+  },
+  {
+    "title": "Wavin' Flag",
+    "artist": "K'naan",
+    "year": 2009
+  },
+  {
+    "title": "Sodade",
+    "artist": "Cesária Évora",
+    "year": 1992
+  },
+  {
+    "title": "Bamboleo",
+    "artist": "Gipsy Kings",
+    "year": 1987
+  },
+  {
+    "title": "Baba Yetu",
+    "artist": "Christopher Tin",
+    "year": 2005
+  },
+  {
+    "title": "Yıldızların Altında",
+    "artist": "Sezen Aksu",
+    "year": 1991
+  },
+  {
+    "title": "Clandestino",
+    "artist": "Manu Chao",
+    "year": 1998
+  },
+  {
+    "title": "Lamma Bada Yatathanna",
+    "artist": "Fairuz",
+    "year": 1962
+  },
+  {
+    "title": "Soukura",
+    "artist": "Aïcha Redouane",
+    "year": 1997
+  },
+  {
+    "title": "Didi",
+    "artist": "Khaled",
+    "year": 1992
+  },
+  {
+    "title": "Sweet Lullaby",
+    "artist": "Deep Forest",
+    "year": 1992
+  },
+  {
+    "title": "Neria",
+    "artist": "Oliver Mtukudzi",
+    "year": 1991
+  },
+  {
+    "title": "Ojos de Brujo",
+    "artist": "Ventilaor R-80",
+    "year": 1999
+  },
+  {
+    "title": "Pata Pata",
+    "artist": "Miriam Makeba",
+    "year": 1967
+  },
+  {
+    "title": "Yeke Yeke",
+    "artist": "Mory Kanté",
+    "year": 1987
+  },
+  {
+    "title": "Enta Omri",
+    "artist": "Umm Kulthum",
+    "year": 1964
+  },
+  {
+    "title": "Hoppípolla",
+    "artist": "Sigur Rós",
+    "year": 2005
+  },
+  {
+    "title": "Aguas de Março",
+    "artist": "Tom Jobim",
+    "year": 1972
+  },
+  {
+    "title": "Svefn-g-englar",
+    "artist": "Sigur Rós",
+    "year": 1999
+  },
+  {
+    "title": "Mweya Wekondo",
+    "artist": "Thomas Mapfumo",
+    "year": 1988
+  },
+  {
+    "title": "Tha Malome",
+    "artist": "Hugh Masekela",
+    "year": 1984
+  },
+  {
+    "title": "Shosholoza",
+    "artist": "Ladysmith Black Mambazo",
+    "year": 1987
+  },
+  {
+    "title": "Hoppípolla",
+    "artist": "Sigur Rós",
+    "year": 2005
+  },
+  {
+    "title": "Yestarday Man",
+    "artist": "Fela Kuti",
+    "year": 1971
+  },
+  {
+    "title": "Zombie",
+    "artist": "Fela Kuti",
+    "year": 1976
+  },
+  {
+    "title": "Didi",
+    "artist": "Khaled",
+    "year": 1992
+  },
+  {
+    "title": "Langa More Piya",
+    "artist": "Lata Mangeshkar",
+    "year": 1963
+  },
+  {
+    "title": "Three Little Birds",
+    "artist": "Bob Marley & The Wailers",
+    "year": 1977
+  },
+  {
+    "title": "Redemption Song",
+    "artist": "Bob Marley & The Wailers",
+    "year": 1980
+  },
+  {
+    "title": "Pressure Drop",
+    "artist": "Toots & The Maytals",
+    "year": 1970
+  },
+  {
+    "title": "Rivers of Babylon",
+    "artist": "The Melodians",
+    "year": 1970
+  },
+  {
+    "title": "Satta Massagana",
+    "artist": "The Abyssinians",
+    "year": 1976
+  },
+  {
+    "title": "Welcome to Jamrock",
+    "artist": "Damian Marley",
+    "year": 2005
+  },
+  {
+    "title": "Zungo",
+    "artist": "Yellowman",
+    "year": 1983
+  },
+  {
+    "title": "Gasolina",
+    "artist": "Daddy Yankee",
+    "year": 2004
+  },
+  {
+    "title": "Safaera",
+    "artist": "Bad Bunny, Jowell & Randy, Ñengo Flow",
+    "year": 2020
+  },
+  {
+    "title": "Con Calma",
+    "artist": "Daddy Yankee & Snow",
+    "year": 2019
+  },
+  {
+    "title": "Dákiti",
+    "artist": "Bad Bunny & Jhay Cortez",
+    "year": 2020
+  },
+  {
+    "title": "La Santa",
+    "artist": "Bad Bunny & Daddy Yankee",
+    "year": 2020
+  },
+  {
+    "title": "Baila Conmigo",
+    "artist": "Dayvi & Victor Cárdenas ft. Kelly Ruiz",
+    "year": 2018
+  },
+  {
+    "title": "Know No Better",
+    "artist": "Pop Smoke",
+    "year": 2020
+  },
+  {
+    "title": "Dior",
+    "artist": "Pop Smoke",
+    "year": 2019
+  },
+  {
+    "title": "Welcome to the Party",
+    "artist": "Pop Smoke",
+    "year": 2019
+  },
+  {
+    "title": "Slide",
+    "artist": "Digga D",
+    "year": 2020
+  },
+  {
+    "title": "Body",
+    "artist": "Tion Wayne & Russ Millions",
+    "year": 2021
+  },
+  {
+    "title": "Homerton B",
+    "artist": "Unknown T",
+    "year": 2018
+  },
+  {
+    "title": "Keisha & Becky",
+    "artist": "Russ & Tion Wayne",
+    "year": 2019
+  },
+  {
+    "title": "Shoot The Racist",
+    "artist": "The Latin Kings",
+    "year": 1994
+  },
+  {
+    "title": "Amassakoul N'Ténéré",
+    "artist": "Tinariwen",
+    "year": 2004
+  },
+  {
+    "title": "Gamelan Beleganjur",
+    "artist": "Sekaa Gong Pinda Telu",
+    "year": 1989
+  },
+  {
+    "title": "Khaader Khaader",
+    "artist": "Noura Mint Seymali",
+    "year": 2014
+  },
+  {
+    "title": "The Germs of Perfection",
+    "artist": "The Locust",
+    "year": 2003
+  },
+  {
+    "title": "Ei Fora Le Corna",
+    "artist": "Banda Ionica",
+    "year": 1999
+  },
+  {
+    "title": "Jaat Kahan Ho",
+    "artist": "Begum Akhtar",
+    "year": 1965
+  },
+  {
+    "title": "Malhari",
+    "artist": "Vishal Dadlani",
+    "year": 2015
+  },
+  {
+    "title": "Ushna",
+    "artist": "Fathy Salama",
+    "year": 2001
+  },
+  {
+    "title": "Xáu Xié Xie",
+    "artist": "MC Bin Laden",
+    "year": 2016
+  },
+  {
+    "title": "Qongqothwane",
+    "artist": "Miriam Makeba",
+    "year": 1967
+  },
+  {
+    "title": "Touki",
+    "artist": "Orchestra Baobab",
+    "year": 1982
+  },
+  {
+    "title": "Asa Branca",
+    "artist": "Luiz Gonzaga",
+    "year": 1947
+  },
+  {
+    "title": "Didgeridoo",
+    "artist": "Aphex Twin",
+    "year": 1992
+  },
+  {
+    "title": "Likkle More",
+    "artist": "Tommy Lee Sparta",
+    "year": 2017
+  },
+  {
+    "title": "Vem Dançar o Messy Messy",
+    "artist": "MC Leozinho",
+    "year": 2006
+  },
+  {
+    "title": "Vambora",
+    "artist": "Adriana Calcanhotto",
+    "year": 1998
+  },
+  {
+    "title": "Tenement Yard",
+    "artist": "Jacob Miller",
+    "year": 1976
+  },
+  {
+    "title": "Hyph Mngo",
+    "artist": "Joy Orbison",
+    "year": 2009
+  },
+  {
+    "title": "I Got The...",
+    "artist": "Labi Siffre",
+    "year": 1975
+  },
+  {
+    "title": "The Rite of Spring",
+    "artist": "Igor Stravinsky",
+    "year": 1913
+  },
+  {
+    "title": "Adagio for Strings",
+    "artist": "Samuel Barber",
+    "year": 1936
+  },
+  {
+    "title": "Tabula Rasa",
+    "artist": "Arvo Pärt",
+    "year": 1977
+  },
+  {
+    "title": "Threnody for the Victims of Hiroshima",
+    "artist": "Krzysztof Penderecki",
+    "year": 1960
+  },
+  {
+    "title": "In C",
+    "artist": "Terry Riley",
+    "year": 1964
+  },
+  {
+    "title": "Short Ride in a Fast Machine",
+    "artist": "John Adams",
+    "year": 1986
+  },
+  {
+    "title": "Atmosphere",
+    "artist": "György Ligeti",
+    "year": 1961
+  },
+  {
+    "title": "Bolero",
+    "artist": "Maurice Ravel",
+    "year": 1928
+  },
+  {
+    "title": "Music for 18 Musicians",
+    "artist": "Steve Reich",
+    "year": 1976
+  },
+  {
+    "title": "Symphony No. 5",
+    "artist": "Philip Glass",
+    "year": 1999
+  },
+  {
+    "title": "Different Trains",
+    "artist": "Steve Reich",
+    "year": 1988
+  },
+  {
+    "title": "Concerto for Orchestra",
+    "artist": "Béla Bartók",
+    "year": 1943
+  },
+  {
+    "title": "Symphony No. 7",
+    "artist": "Dmitri Shostakovich",
+    "year": 1942
+  },
+  {
+    "title": "Quartet for the End of Time",
+    "artist": "Olivier Messiaen",
+    "year": 1941
+  },
+  {
+    "title": "Spiegel im Spiegel",
+    "artist": "Arvo Pärt",
+    "year": 1978
+  },
+  {
+    "title": "4'33\"",
+    "artist": "John Cage",
+    "year": 1952
+  },
+  {
+    "title": "Lux Aeterna",
+    "artist": "György Ligeti",
+    "year": 1966
+  },
+  {
+    "title": "The Protecting Veil",
+    "artist": "John Tavener",
+    "year": 1987
+  },
+  {
+    "title": "The Knife",
+    "artist": "Wendy Carlos",
+    "year": 1974
+  },
+  {
+    "title": "Three Places in New England",
+    "artist": "Charles Ives",
+    "year": 1914
+  },
+  {
+    "title": "Appalachian Spring",
+    "artist": "Aaron Copland",
+    "year": 1944
+  },
+  {
+    "title": "Symphony No. 1 \"Afro-American\"",
+    "artist": "William Grant Still",
+    "year": 1930
+  },
+  {
+    "title": "Black Angels",
+    "artist": "George Crumb",
+    "year": 1970
+  },
+  {
+    "title": "Glassworks VI. \"Closing\"",
+    "artist": "Philip Glass",
+    "year": 1982
+  },
+  {
+    "title": "Piano Concerto No. 2",
+    "artist": "Sergei Rachmaninoff",
+    "year": 1901
+  },
+  {
+    "title": "Symphony No. 3",
+    "artist": "Henryk Górecki",
+    "year": 1976
+  },
+  {
+    "title": "Rothko Chapel",
+    "artist": "Morton Feldman",
+    "year": 1971
+  },
+  {
+    "title": "The Unanswered Question",
+    "artist": "Charles Ives",
+    "year": 1908
+  },
+  {
+    "title": "String Quartet No. 8",
+    "artist": "Dmitri Shostakovich",
+    "year": 1960
+  },
+  {
+    "title": "Cloudbusting",
+    "artist": "Max Richter",
+    "year": 2004
+  },
+  {
+    "title": "The Revolution Will Not Be Televised",
+    "artist": "Gil Scott-Heron",
+    "year": 2004
+  },
+  {
+    "title": "American Pie",
+    "artist": "Don McLean",
+    "year": 1971
   }
 ]

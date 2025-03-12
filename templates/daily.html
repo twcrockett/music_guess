@@ -187,6 +187,9 @@
                     if (data.artist) {
                         artistReveal.textContent = data.artist;
                     }
+                    if (data.title) {
+                        titleSpan.textContent = data.title;
+                    }
 
                     // Disable buttons
                     if (guessBtn) guessBtn.disabled = true;
@@ -233,6 +236,9 @@
                     songInfoDiv.style.display = 'block';
                     if (data.artist) {
                         artistReveal.textContent = data.artist;
+                    }
+                    if (data.title) {
+                        titleSpan.textContent = data.title;
                     }
 
                     // Disable buttons

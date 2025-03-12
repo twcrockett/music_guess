@@ -231,7 +231,7 @@
                         feedbackDiv.textContent = formatYearDifferenceFeedback(0, data.actual_year, true);
 
                         // Show song info and next button
-                        showSongInfo(data.artist);
+                        showSongInfo(data.artist, data.title);
 
                         // Disable buttons
                         if (guessBtn) guessBtn.disabled = true;
@@ -242,7 +242,7 @@
                         feedbackDiv.textContent = formatYearDifferenceFeedback(data.year_difference, data.actual_year, false);
 
                         // Show song info and next button
-                        showSongInfo(data.artist);
+                        showSongInfo(data.artist, data.title);
 
                         // Disable buttons
                         if (guessBtn) guessBtn.disabled = true;
@@ -314,7 +314,7 @@
                     }
 
                     // Show song info and next button
-                    showSongInfo(data.artist);
+                    showSongInfo(data.artist, data.title);
 
                     // Disable buttons
                     if (guessBtn) guessBtn.disabled = true;
@@ -328,13 +328,16 @@
             }
 
             // Show song info and next button
-            function showSongInfo(artist) {
+            function showSongInfo(artist, title) {
                 songInfoDiv.style.display = 'block';
                 nextBtn.style.display = 'block';
 
-                // Make sure artist is displayed
+                // Make sure artist and title are displayed
                 if (artist && !artistReveal.textContent) {
                     artistReveal.textContent = artist;
+                }
+                if (title && !titleSpan.textContent) {
+                    titleSpan.textContent = title;
                 }
             }
         });

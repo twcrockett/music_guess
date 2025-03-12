@@ -465,3 +465,23 @@ footer {
     font-size: 0.9em;
     color: #7f8c8d;
 }
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.footer-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-bottom: 1px;
+}

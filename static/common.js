@@ -133,6 +133,6 @@ function setupEnterKeyForGuess(inputElement, buttonElement) {
 // Common footer HTML
 const footerHTML = `
 <footer>
-       <p>Created by Big Tay | <a href="https://github.com/twcrockett/song-guess-game" target="_blank">GitHub</a></p>
+    <p><a href="https://twcrockett.github.io/" target="_blank"><img src="https://avatars.githubusercontent.com/u/79346208?v=4" class="footer-avatar" alt="Tay's avatar"></a> Made by Tay | <a href="https://github.com/twcrockett/song-guess-game" target="_blank">GitHub</a></p>
 </footer>
 `;

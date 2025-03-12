@@ -33,9 +33,9 @@
       "year": 1975
     },
     {
-      "title": "Superstition",
-      "artist": "Stevie Wonder",
-      "year": 1972
+      "title": "Glassworks VI. \"Closing\"",
+      "artist": "Philip Glass",
+      "year": 1982
     },
     {
       "title": "In the End",
@@ -51,6 +51,60 @@
       "title": "Toxic",
       "artist": "Britney Spears",
       "year": 2003
+    }
+  ],
+  "2025-03-14": [
+    {
+      "title": "Stairway to Heaven",
+      "artist": "Led Zeppelin",
+      "year": 1971
+    },
+    {
+      "title": "What's Going On",
+      "artist": "Marvin Gaye",
+      "year": 1971
+    },
+    {
+      "title": "Imagine",
+      "artist": "John Lennon",
+      "year": 1971
+    },
+    {
+      "title": "Take Me Home, Country Roads",
+      "artist": "John Denver",
+      "year": 1971
+    },
+    {
+      "title": "American Pie",
+      "artist": "Don McLean",
+      "year": 1971
+    }
+  ],
+  "2025-03-15": [
+    {
+      "title": "Bolero",
+      "artist": "Maurice Ravel",
+      "year": 1928
+    },
+    {
+      "title": "Livin' la Vida Loca",
+      "artist": "Ricky Martin",
+      "year": 1999
+    },
+    {
+      "title": "Heart of Glass",
+      "artist": "Blondie",
+      "year": 1979
+    },
+    {
+      "title": "Kiss from a Rose",
+      "artist": "Seal",
+      "year": 1994
+    },
+    {
+      "title": "Sicko Mode",
+      "artist": "Travis Scott",
+      "year": 2018
     }
   ]
 }

@@ -14,8 +14,13 @@ app.secret_key = os.urandom(24)  # For session management
 # Load song database
 def load_songs():
     if os.path.exists('songs.json'):
-        with open('songs.json', 'r') as f:
-            return json.load(f)
+        try:
+            with open('songs.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except UnicodeDecodeError:
+            # Fallback to Latin-1 which can handle all byte values
+            with open('songs.json', 'r', encoding='latin-1') as f:
+                return json.load(f)
     else:
         # Sample data if no file exists
         sample_songs = [
@@ -32,8 +37,8 @@ def load_songs():
         ]
 
         # Create the songs.json file with sample data
-        with open('songs.json', 'w') as f:
-            json.dump(sample_songs, f)
+        with open('songs.json', 'w', encoding='utf-8') as f:
+            json.dump(sample_songs, f, ensure_ascii=False)
 
         return sample_songs
 
@@ -41,8 +46,13 @@ def load_songs():
 # Load curated daily songs
 def load_curated_songs():
     if os.path.exists('curated_songs.json'):
-        with open('curated_songs.json', 'r') as f:
-            return json.load(f)
+        try:
+            with open('curated_songs.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except UnicodeDecodeError:
+            # Fallback to Latin-1 which can handle all byte values
+            with open('curated_songs.json', 'r', encoding='latin-1') as f:
+                return json.load(f)
     else:
         # Return empty dict if no curated songs exist
         return {}
@@ -438,7 +448,8 @@ def check_guess():
                 "new_score": new_score,
                 "game_over": game_over,
                 "round": session['current_round'],
-                "artist": current_song.get('artist', '')
+                "artist": current_song.get('artist', ''),
+                "title": current_song.get('title', '')
             })
         else:
             # Free mode
@@ -459,7 +470,8 @@ def check_guess():
                     "points_lost": year_difference,
                     "new_score": new_score,
                     "next_round": True,
-                    "artist": current_song.get('artist', '')
+                    "artist": current_song.get('artist', ''),
+                    "title": current_song.get('title', '')
                 })
             else:
                 # Unlimited guesses mode - just return feedback
@@ -501,8 +513,8 @@ def add_curated_song():
     curated_songs = load_curated_songs()
     curated_songs[date] = songs
 
-    with open('curated_songs.json', 'w') as f:
-        json.dump(curated_songs, f)
+    with open('curated_songs.json', 'w', encoding='utf-8') as f:
+        json.dump(curated_songs, f, ensure_ascii=False, indent=2)
 
     return jsonify({"message": f"Added {len(songs)} songs for {date}"})
 
@@ -533,11 +545,15 @@ def add_song():
         "year": int(year)
     })
 
-    with open('songs.json', 'w') as f:
-        json.dump(songs, f)
+    with open('songs.json', 'w', encoding='utf-8') as f:
+        json.dump(songs, f, ensure_ascii=False, indent=2)
 
     return jsonify({"message": "Song added successfully"})
 
 
 if __name__ == '__main__':
+    # For local development
     app.run(debug=True)
+else:
+    # For production on Render
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
