@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Play - Guess the Song Year</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Rampart+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Free Play</h1>
-    <h2>Play as many songs as you want!</h2>
+    <h2 id="mode-subtitle">Play as many songs as you want!</h2>
 
     <div class="game-container">
         <div class="game-header">
@@ -21,17 +24,23 @@
             <p>Loading song...</p>
         </div>
 
-        <div class="hint" id="title-hint" style="display: none;">
-            Title: <span id="title-display"></span>
-        </div>
+        <div class="hint-section">
+            <div class="hint" id="title-hint" style="display: none;">
+                Title: <span id="title-display"></span>
+            </div>
 
-        <div class="hint" id="artist-hint" style="display: none;">
-            Artist: <span id="artist"></span>
-        </div>
+            <div class="hint" id="artist-hint" style="display: none;">
+                Artist: <span id="artist"></span>
+            </div>
 
-        <button id="hint-btn" class="hint-btn">Get Hint</button>
+            <button id="hint-btn" class="hint-btn">Get Hint</button>
+        </div>
 
         <div class="feedback" id="feedback"></div>
+
+        <div class="game-controls">
+            <button class="next-btn" id="next-btn" style="display: none;">Next Song</button>
+        </div>
 
         <div class="song-info" id="song-info">
             <h3>Song Info:</h3>
@@ -40,17 +49,31 @@
             <p><strong>Year:</strong> <span id="year-reveal"></span></p>
         </div>
 
-        <button class="next-btn" id="next-btn">Next Song</button>
-
         <div class="home-links">
             <a href="/" class="home-btn">Back to Home</a>
             <a href="/free_options" class="home-btn">Change Options</a>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="game-over-overlay" id="game-over-overlay" style="display: none;">
+            <div class="game-over" id="game-over">
+                <h3>Game Over!</h3>
+                <p>Your score dropped below zero.</p>
+                <div class="final-result">
+                    <p>You survived <span id="final-rounds">0</span> rounds</p>
+                    <p>Final score: <span id="final-score">0</span></p>
+                </div>
+                <div class="game-over-actions">
+                    <a href="/free" class="restart-btn">Play Again</a>
+                    <a href="/free_options" class="restart-btn">Change Options</a>
+                    <a href="/" class="home-btn">Back to Home</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="/static/common.js"></script>
     <script>
-        // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             console.log("Free Play page loaded");
 
@@ -65,8 +88,17 @@
             const showTitle = urlParams.get('title') === 'true';
             const showArtist = urlParams.get('artist') === 'true';
             const unlimitedGuesses = urlParams.get('unlimited') === 'true';
+            const unlimitedMode = urlParams.get('unlimited_mode') === 'true';
 
-            console.log("Game settings:", { showTitle, showArtist, unlimitedGuesses });
+            console.log("Game settings:", { showTitle, showArtist, unlimitedGuesses, unlimitedMode });
+
+            // Update subtitle based on game mode
+            const modeSubtitle = document.getElementById('mode-subtitle');
+            if (unlimitedMode) {
+                modeSubtitle.textContent = "Unlimited Mode - Play without score limits!";
+            } else {
+                modeSubtitle.textContent = "Normal Mode - Game ends when score drops below 0";
+            }
 
             // DOM elements for static elements
             const currentRoundSpan = document.getElementById('current-round');
@@ -83,6 +115,9 @@
             const artistReveal = document.getElementById('artist-reveal');
             const yearReveal = document.getElementById('year-reveal');
             const nextBtn = document.getElementById('next-btn');
+            const gameOverOverlay = document.getElementById('game-over-overlay');
+            const finalRoundsSpan = document.getElementById('final-rounds');
+            const finalScoreSpan = document.getElementById('final-score');
 
             // Set up UI based on options
             if (!showTitle && !showArtist) {
@@ -210,7 +245,8 @@
                     },
                     body: JSON.stringify({
                         guess: guess,
-                        unlimited_guesses: unlimitedGuesses
+                        unlimited_guesses: unlimitedGuesses,
+                        is_skip: false
                     })
                 })
                 .then(response => response.json())
@@ -224,6 +260,15 @@
                     // Update score if provided
                     if (data.new_score !== undefined) {
                         scoreSpan.textContent = data.new_score;
+                    }
+
+                    // Check for game over (score < 0 and not in unlimited mode)
+                    if (data.game_over) {
+                        // Show game over screen
+                        finalRoundsSpan.textContent = data.total_rounds || 0;
+                        finalScoreSpan.textContent = data.new_score;
+                        gameOverOverlay.style.display = 'flex';
+                        return;
                     }
 
                     if (data.result === 'correct') {
@@ -291,6 +336,15 @@
                 const guessBtn = document.getElementById('guess-btn');
                 const skipBtn = document.getElementById('skip-btn');
 
+                // Confirm skip
+                if (!unlimitedMode) {
+                    const currentScore = parseInt(scoreSpan.textContent);
+                    const confirmSkip = confirm("Skipping will deduct 100 points from your score! Are you sure you want to skip?");
+                    if (!confirmSkip) {
+                        return; // User canceled the skip
+                    }
+                }
+
                 fetch('/check-guess', {
                     method: 'POST',
                     headers: {
@@ -298,15 +352,25 @@
                     },
                     body: JSON.stringify({
                         guess: 0,  // Dummy value
-                        unlimited_guesses: false
+                        unlimited_guesses: false,
+                        is_skip: true
                     })
                 })
                 .then(response => response.json())
                 .then(data => {
+                    // Check for game over (score < 0 and not in unlimited mode)
+                    if (data.game_over) {
+                        // Show game over screen
+                        finalRoundsSpan.textContent = data.total_rounds || 0;
+                        finalScoreSpan.textContent = data.new_score;
+                        gameOverOverlay.style.display = 'flex';
+                        return;
+                    }
+
                     // Display feedback
                     feedbackDiv.style.display = 'block';
                     feedbackDiv.className = 'feedback incorrect';
-                    feedbackDiv.textContent = `Skipped. This song was released in ${data.actual_year}.`;
+                    feedbackDiv.textContent = `Skipped. This song was released in ${data.actual_year}. You lost 100 points.`;
 
                     // Update score
                     if (data.new_score !== undefined) {

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Play Options - Guess the Song Year</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=GRampart+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Free Play Options</h1>
@@ -13,25 +16,36 @@
     <div class="options-container">
         <div class="options-form">
             <div class="option-group">
-                <label class="option-label">Game Settings:</label>
+                <label class="option-label">Game Mode:</label>
+                <div class="option-description">
+                    Choose your game mode:
+                </div>
+                <div class="radio-container">
+                    <input type="radio" id="normal-mode" name="game-mode" checked>
+                    <label for="normal-mode">Normal Mode - Game ends when score drops below 0</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" id="unlimited-mode" name="game-mode">
+                    <label for="unlimited-mode">Unlimited Mode - Keep playing regardless of score</label>
+                </div>
+            </div>
 
+            <div class="option-group">
+                <label class="option-label">Hints & Guesses:</label>
                 <div class="option-description">
                     Choose how you want to play:
                 </div>
-
                 <div class="checkbox-container">
                     <input type="checkbox" id="title-option">
                     <label for="title-option">Show Song Title</label>
                 </div>
-
                 <div class="checkbox-container">
                     <input type="checkbox" id="hint-option">
                     <label for="hint-option">Enable Artist Hints</label>
                 </div>
-
                 <div class="checkbox-container">
                     <input type="checkbox" id="unlimited-guesses">
-                    <label for="unlimited-guesses">Unlimited Guesses Mode</label>
+                    <label for="unlimited-guesses">Unlimited Guesses Per Song</label>
                 </div>
             </div>
 
@@ -54,14 +68,17 @@
             const titleOption = document.getElementById('title-option');
             const hintOption = document.getElementById('hint-option');
             const unlimitedGuessesOption = document.getElementById('unlimited-guesses');
+            const normalModeOption = document.getElementById('normal-mode');
+            const unlimitedModeOption = document.getElementById('unlimited-mode');
 
             startBtn.addEventListener('click', function() {
                 const showTitle = titleOption.checked;
                 const showArtist = hintOption.checked;
-                const unlimited = unlimitedGuessesOption.checked;
+                const unlimitedGuesses = unlimitedGuessesOption.checked;
+                const unlimitedMode = unlimitedModeOption.checked;
 
                 // Redirect to free play page with options as query parameters
-                window.location.href = `/free?title=${showTitle}&artist=${showArtist}&unlimited=${unlimited}`;
+                window.location.href = `/free?title=${showTitle}&artist=${showArtist}&unlimited=${unlimitedGuesses}&unlimited_mode=${unlimitedMode}`;
             });
         });
     </script>

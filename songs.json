@@ -2728,5 +2728,415 @@
     "title": "American Pie",
     "artist": "Don McLean",
     "year": 1971
+  },
+  {
+    "title": "Simple Love",
+    "artist": "Jay Chou",
+    "year": 2001
+  },
+  {
+    "title": "Concierto de Aranjuez II. Adagio",
+    "artist": "Joaquín Rodrigo",
+    "year": 1939
+  },
+  {
+    "title": "Finale (Star Wars: The Empire Strikes Back)",
+    "artist": "John Williams",
+    "year": 1981
+  },
+  {
+    "title": "Over the Rainbow",
+    "artist": "Judy Garland",
+    "year": 1939
+  },
+  {
+    "title": "Moon River",
+    "artist": "Henry Mancini",
+    "year": 1961
+  },
+  {
+    "title": "The Way We Were",
+    "artist": "Barbra Streisand",
+    "year": 1973
+  },
+  {
+    "title": "Theme from Shaft",
+    "artist": "Isaac Hayes",
+    "year": 1971
+  },
+  {
+    "title": "Stayin' Alive",
+    "artist": "Bee Gees",
+    "year": 1977
+  },
+  {
+    "title": "Don't You (Forget About Me)",
+    "artist": "Simple Minds",
+    "year": 1985
+  },
+  {
+    "title": "Footloose",
+    "artist": "Kenny Loggins",
+    "year": 1984
+  },
+  {
+    "title": "Take My Breath Away",
+    "artist": "Berlin",
+    "year": 1986
+  },
+  {
+    "title": "My Heart Will Go On",
+    "artist": "Celine Dion",
+    "year": 1997
+  },
+  {
+    "title": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "year": 1992
+  },
+  {
+    "title": "Lose Yourself",
+    "artist": "Eminem",
+    "year": 2002
+  },
+  {
+    "title": "Let It Go",
+    "artist": "Idina Menzel",
+    "year": 2013
+  },
+  {
+    "title": "Kiss From a Rose",
+    "artist": "Seal",
+    "year": 1995
+  },
+  {
+    "title": "Eye of the Tiger",
+    "artist": "Survivor",
+    "year": 1982
+  },
+  {
+    "title": "Falling Slowly",
+    "artist": "Glen Hansard & Markéta Irglová",
+    "year": 2007
+  },
+  {
+    "title": "Let the River Run",
+    "artist": "Carly Simon",
+    "year": 1988
+  },
+  {
+    "title": "Skyfall",
+    "artist": "Adele",
+    "year": 2012
+  },
+  {
+    "title": "Everything I Do (I Do It For You)",
+    "artist": "Bryan Adams",
+    "year": 1991
+  },
+  {
+    "title": "Shallow",
+    "artist": "Lady Gaga & Bradley Cooper",
+    "year": 2018
+  },
+  {
+    "title": "What Was I Made For?",
+    "artist": "Billie Eilish",
+    "year": 2023
+  },
+  {
+    "title": "Main Theme (Jaws)",
+    "artist": "John Williams",
+    "year": 1975
+  },
+  {
+    "title": "Raiders March",
+    "artist": "John Williams",
+    "year": 1981
+  },
+  {
+    "title": "Theme from Jurassic Park",
+    "artist": "John Williams",
+    "year": 1993
+  },
+  {
+    "title": "Hedwig's Theme (Harry Potter)",
+    "artist": "John Williams",
+    "year": 2001
+  },
+  {
+    "title": "Concerning Hobbits (The Lord of the Rings)",
+    "artist": "Howard Shore",
+    "year": 2001
+  },
+  {
+    "title": "Time (Inception)",
+    "artist": "Hans Zimmer",
+    "year": 2010
+  },
+  {
+    "title": "The Godfather Theme",
+    "artist": "Nino Rota",
+    "year": 1972
+  },
+  {
+    "title": "Lux Aeterna (Requiem for a Dream)",
+    "artist": "Clint Mansell",
+    "year": 2000
+  },
+  {
+    "title": "Theme from Mission: Impossible",
+    "artist": "Lalo Schifrin",
+    "year": 1966
+  },
+  {
+    "title": "Cornfield Chase (Interstellar)",
+    "artist": "Hans Zimmer",
+    "year": 2014
+  },
+  {
+    "title": "Main Title (Gone with the Wind)",
+    "artist": "Max Steiner",
+    "year": 1939
+  },
+  {
+    "title": "Gerudo Valley (The Legend of Zelda: Ocarina of Time)",
+    "artist": "Koji Kondo",
+    "year": 1998
+  },
+  {
+    "title": "Baba Yetu (Civilization IV)",
+    "artist": "Christopher Tin",
+    "year": 2005
+  },
+  {
+    "title": "Snake Eater (Metal Gear Solid 3)",
+    "artist": "Norihiko Hibino",
+    "year": 2004
+  },
+  {
+    "title": "Fear Not This Night (Guild Wars 2)",
+    "artist": "Jeremy Soule",
+    "year": 2012
+  },
+  {
+    "title": "The Opened Way (Shadow of the Colossus)",
+    "artist": "Kow Otani",
+    "year": 2005
+  },
+  {
+    "title": "Corridors of Time (Chrono Trigger)",
+    "artist": "Yasunori Mitsuda",
+    "year": 1995
+  },
+  {
+    "title": "A Beautiful Song (NieR: Automata)",
+    "artist": "Keiichi Okabe",
+    "year": 2017
+  },
+  {
+    "title": "Sogno di Volare (Civilization VI)",
+    "artist": "Christopher Tin",
+    "year": 2016
+  },
+  {
+    "title": "The Scions' Dance in Purgatory (Final Fantasy XIV)",
+    "artist": "Masayoshi Soken",
+    "year": 2019
+  },
+  {
+    "title": "Leaving Earth (Mass Effect 3)",
+    "artist": "Clint Mansell",
+    "year": 2012
+  },
+  {
+    "title": "Stickerbrush Symphony (Donkey Kong Country 2)",
+    "artist": "David Wise",
+    "year": 1995
+  },
+  {
+    "title": "Apotheosis (Journey)",
+    "artist": "Austin Wintory",
+    "year": 2012
+  },
+  {
+    "title": "Ezio's Family (Assassin's Creed II)",
+    "artist": "Jesper Kyd",
+    "year": 2009
+  },
+  {
+    "title": "The Last of Us (Main Theme)",
+    "artist": "Gustavo Santaolalla",
+    "year": 2013
+  },
+  {
+    "title": "Far Horizons (The Elder Scrolls V: Skyrim)",
+    "artist": "Jeremy Soule",
+    "year": 2011
+  },
+  {
+    "title": "Green Hill Zone (Sonic the Hedgehog)",
+    "artist": "Masato Nakamura",
+    "year": 1991
+  },
+  {
+    "title": "Aria di Mezzo Carattere (Final Fantasy VI)",
+    "artist": "Nobuo Uematsu",
+    "year": 1994
+  },
+  {
+    "title": "Moon Theme (DuckTales)",
+    "artist": "Hiroshige Tonomura",
+    "year": 1989
+  },
+  {
+    "title": "Lemonade",
+    "artist": "Internet Money ft. Don Toliver",
+    "year": 2020
+  },
+  {
+    "title": "The Box",
+    "artist": "Roddy Ricch",
+    "year": 2019
+  },
+  {
+    "title": "Astronaut In The Ocean",
+    "artist": "Masked Wolf",
+    "year": 2021
+  },
+  {
+    "title": "Montero (Call Me By Your Name)",
+    "artist": "Lil Nas X",
+    "year": 2021
+  },
+  {
+    "title": "Cha Cha Cha",
+    "artist": "Käärijä",
+    "year": 2023
+  },
+  {
+    "title": "INDUSTRY BABY",
+    "artist": "Lil Nas X ft. Jack Harlow",
+    "year": 2021
+  },
+  {
+    "title": "Dance The Night",
+    "artist": "Dua Lipa",
+    "year": 2023
+  },
+  {
+    "title": "Paint The Town Red",
+    "artist": "Doja Cat",
+    "year": 2023
+  },
+  {
+    "title": "Pink Venom",
+    "artist": "BLACKPINK",
+    "year": 2022
+  },
+  {
+    "title": "Conga",
+    "artist": "Gloria Estefan & Miami Sound Machine",
+    "year": 1985
+  },
+  {
+    "title": "La Camisa Negra",
+    "artist": "Juanes",
+    "year": 2004
+  },
+  {
+    "title": "Bella Ciao",
+    "artist": "Modena City Ramblers",
+    "year": 1994
+  },
+  {
+    "title": "Lambada",
+    "artist": "Kaoma",
+    "year": 1989
+  },
+  {
+    "title": "Choli Ke Peeche",
+    "artist": "Ila Arun & Alka Yagnik",
+    "year": 1993
+  },
+  {
+    "title": "Tubthumping",
+    "artist": "Chumbawamba",
+    "year": 1997
+  },
+  {
+    "title": "YMCA",
+    "artist": "Village People",
+    "year": 1978
+  },
+  {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "year": 1978
+  },
+  {
+    "title": "Jolene",
+    "artist": "Dolly Parton",
+    "year": 1973
+  },
+  {
+    "title": "Ring of Fire",
+    "artist": "Johnny Cash",
+    "year": 1963
+  },
+  {
+    "title": "Blue Bayou",
+    "artist": "Linda Ronstadt",
+    "year": 1977
+  },
+  {
+    "title": "Yakety Yak",
+    "artist": "The Coasters",
+    "year": 1958
+  },
+  {
+    "title": "Not Fade Away",
+    "artist": "Buddy Holly",
+    "year": 1957
+  },
+  {
+    "title": "Mo Money Mo Problems",
+    "artist": "The Notorious B.I.G. ft. Puff Daddy & Mase",
+    "year": 1997
+  },
+  {
+    "title": "Raining Men",
+    "artist": "The Weather Girls",
+    "year": 1982
+  },
+  {
+    "title": "Back on the Chain Gang",
+    "artist": "The Pretenders",
+    "year": 1982
+  },
+  {
+    "title": "Last Nite",
+    "artist": "The Strokes",
+    "year": 2001
+  },
+  {
+    "title": "Kids",
+    "artist": "MGMT",
+    "year": 2008
+  },
+  {
+    "title": "Yoshimi Battles the Pink Robots",
+    "artist": "The Flaming Lips",
+    "year": 2002
+  },
+  {
+    "title": "Electric Feel",
+    "artist": "MGMT",
+    "year": 2007
+  },
+  {
+    "title": "Makeba",
+    "artist": "Jain",
+    "year": 2015
   }
 ]

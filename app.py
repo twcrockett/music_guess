@@ -287,15 +287,18 @@ def free_play():
     show_title = request.args.get('title', 'false').lower() == 'true'
     show_artist = request.args.get('artist', 'false').lower() == 'true'
     unlimited_guesses = request.args.get('unlimited', 'false').lower() == 'true'
+    unlimited_mode = request.args.get('unlimited_mode', 'false').lower() == 'true'
 
     session['show_title'] = show_title
     session['show_artist'] = show_artist
     session['unlimited_guesses'] = unlimited_guesses
+    session['unlimited_mode'] = unlimited_mode
 
     return render_template('free.html',
                            show_title=show_title,
                            show_artist=show_artist,
-                           unlimited_guesses=unlimited_guesses)
+                           unlimited_guesses=unlimited_guesses,
+                           unlimited_mode=unlimited_mode)
 
 
 @app.route('/free_options')
@@ -412,6 +415,9 @@ def check_guess():
         except (ValueError, TypeError):
             guess = 0
 
+        # Check if this is a skip
+        is_skip = data.get('is_skip', False)
+
         # Get the actual year from the session
         current_song = session.get('current_song', {})
         if not current_song:
@@ -429,9 +435,16 @@ def check_guess():
         game_mode = session.get('game_mode', 'free')
         score = session.get('score', 100)
 
+        # Apply the skip penalty (100 points) if this is a skip
+        if is_skip:
+            points_lost = 100
+        else:
+            points_lost = year_difference
+
         if game_mode == 'daily':
             # In daily mode, subtract points based on how far off the guess is
-            new_score = max(0, score - year_difference)
+            # Now allowing negative scores
+            new_score = score - points_lost
             session['score'] = new_score
 
             # Move to next round
@@ -440,11 +453,24 @@ def check_guess():
             # Check if game is over
             game_over = session['current_round'] >= 5
 
+            # Save guess history to session for the results copy feature
+            if 'guess_history' not in session:
+                session['guess_history'] = []
+
+            session['guess_history'].append({
+                'artist': current_song.get('artist', ''),
+                'title': current_song.get('title', ''),
+                'actual_year': actual_year,
+                'guessed_year': guess,
+                'year_difference': year_difference,
+                'is_skip': is_skip
+            })
+
             return jsonify({
                 "result": "correct" if year_difference == 0 else "incorrect",
                 "year_difference": year_difference,
                 "actual_year": actual_year,
-                "points_lost": year_difference,
+                "points_lost": points_lost,
                 "new_score": new_score,
                 "game_over": game_over,
                 "round": session['current_round'],
@@ -453,25 +479,34 @@ def check_guess():
             })
         else:
             # Free mode
-            unlimited_guesses = session.get('unlimited_guesses', False)
+            unlimited_mode = session.get('unlimited_guesses', False)
 
-            if year_difference == 0 or not unlimited_guesses:
-                # Move to next round if correct or not in unlimited guess mode
+            # Update score (allowing negative scores)
+            new_score = score - points_lost
+            session['score'] = new_score
+
+            # Check if game is over in normal mode (score <= 0)
+            game_over = not unlimited_mode and new_score < 0
+
+            if year_difference == 0 or is_skip or game_over or not unlimited_mode:
+                # Move to next round if:
+                # - correct guess, or
+                # - skipped, or
+                # - game over, or
+                # - not in unlimited guess mode
                 session['current_round'] = session.get('current_round', 0) + 1
-
-                # Update score for free mode (only on correct or moving on)
-                new_score = max(0, score - year_difference)
-                session['score'] = new_score
 
                 return jsonify({
                     "result": "correct" if year_difference == 0 else "incorrect",
                     "year_difference": year_difference,
                     "actual_year": actual_year,
-                    "points_lost": year_difference,
+                    "points_lost": points_lost,
                     "new_score": new_score,
                     "next_round": True,
+                    "game_over": game_over,
                     "artist": current_song.get('artist', ''),
-                    "title": current_song.get('title', '')
+                    "title": current_song.get('title', ''),
+                    "total_rounds": session.get('current_round', 0)
                 })
             else:
                 # Unlimited guesses mode - just return feedback

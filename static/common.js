@@ -40,23 +40,73 @@ function injectNavbar() {
 // Helper function to format a song's year response
 function formatYearDifferenceFeedback(yearDifference, actualYear, isCorrect) {
     if (isCorrect) {
-        return 'Perfect! You guessed the exact year!';
+        return 'Perfect! You guessed the exact year! 🎯';
     } else {
-        return `Off by ${yearDifference} years. The actual year was ${actualYear}.`;
+        return `Off by ${yearDifference} years. The actual year was ${actualYear}. ${yearDifference <= 5 ? 'So close!' : ''}`;
     }
 }
 
 // Helper function to generate game over message based on score
 function generateGameOverMessage(score) {
+    // Arrays of music references for each score range
+    const expertMessages = [
+        "Sweet Child O' Mine! You're a bona fide rock historian! 🎸",
+        "You've got the Knowledge, just like Lauryn Hill! 🏆",
+        "You'll never be 'Rick Rolled' with knowledge like that! 🎤",
+        "Don't Stop Believin' in your music expertise! 🌟",
+        "You must have Spotify on 24/7! That was Dynamite! 💯",
+        "You've got all the Uptown Funk you need! 🎵",
+        "Another One Bites The Dust! You crushed this quiz! 👑"
+    ];
+
+    const goodMessages = [
+        "You can't always get what you want, but you got most of these right! 🎵",
+        "You've got rhythm, you've got music, you've got most answers correct! 🎧",
+        "Hit me baby one more time... with another quiz please! 🎤",
+        "We Will, We Will, Rock You... with a slightly harder quiz next time! 👏",
+        "You're walking on sunshine with that performance! ☀️",
+        "Not quite a Smooth Criminal of music knowledge, but close! 🕴️",
+        "You know more than most! It must be all that Rhythm Nation training. 🔥",
+        "That's The Way (Uh-Huh, Uh-Huh) we like your answers! 👍",
+        "Your music knowledge is a Thriller, a Thriller night! 🌙"
+    ];
+
+    const averageMessages = [
+        "Don't cry for me, Argentina—your score is actually decent! 🎭",
+        "Every Rose Has Its Thorn, and every quiz taker misses some questions! 🌹",
+        "With A Little Help From My Friends, you might score higher next time! 👫",
+        "You're not bad, but maybe a little Comfortably Numb on some questions. 💊",
+        "Don't Stop 'Til You Get Enough... correct answers, that is! 🕺",
+        "Like Britney says, 'Oops!... I Did It' okay on this quiz! 😅",
+        "We Can Work It Out with a little more studying! 📚",
+        "You took the midnight train going... somewhere in the middle! 🚆",
+        "More than a feeling, you've got some music knowledge brewing! 🎸"
+    ];
+
+    const needsWorkMessages = [
+        "Yesterday, all your troubles seemed so far away, but today it seems they're here to stay. 🎹",
+        "Bye Bye Bye to your bragging rights. 👋",
+        "Livin' On A Prayer with some of those guesses, weren't you? 🙏",
+        "You might need some R-E-S-P-E-C-T for the artists you're listening to! 🎵",
+        "Here, <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>this</a> might help you improve for next time. 🎧",
+        "Sweet Dreams are made of... better scores than this! Keep trying! 💤"
+    ];
+
+    // Select a random message based on score
+    let messagePool;
     if (score >= 90) {
-        return 'Amazing! You\'re a music history expert!';
+        messagePool = expertMessages;
     } else if (score >= 70) {
-        return 'Great job! You really know your music!';
+        messagePool = goodMessages;
     } else if (score >= 50) {
-        return 'Not bad! You have a decent knowledge of music history.';
+        messagePool = averageMessages;
     } else {
-        return 'Better luck next time! Keep listening to more music!';
+        messagePool = needsWorkMessages;
     }
+
+    // Pick a random message from the appropriate pool
+    const randomIndex = Math.floor(Math.random() * messagePool.length);
+    return messagePool[randomIndex];
 }
 
 // Helper function to validate year input
@@ -77,15 +127,17 @@ function setupAudioPlayer(container, previewUrl, title = null) {
         // No title in the player display
         container.innerHTML = `
             <div class="audio-player">
-                <p>🎵 Now Playing...</p>
+                <p>Now Playing...</p>
                 <audio id="song-audio" preload="auto" controls>
                     <source src="${previewUrl}" type="audio/mp4">
                     Your browser does not support the audio element.
                 </audio>
                 <div class="guess-form">
                     <input type="number" id="year-guess" placeholder="Enter year (e.g., 1985)" min="1900" max="2024">
-                    <button id="guess-btn" type="button">Guess</button>
-                    <button id="skip-btn" type="button">Skip</button>
+                    <div class="button-group">
+                        <button id="guess-btn" type="button">Guess</button>
+                        <button id="skip-btn" type="button">Skip</button>
+                    </div>
                 </div>
             </div>
         `;
@@ -110,8 +162,10 @@ function setupAudioPlayer(container, previewUrl, title = null) {
                 <p>Audio preview not available for this song</p>
                 <div class="guess-form">
                     <input type="number" id="year-guess" placeholder="Enter year (e.g., 1985)" min="1900" max="2024">
-                    <button id="guess-btn" type="button">Guess</button>
-                    <button id="skip-btn" type="button">Skip</button>
+                    <div class="button-group">
+                        <button id="guess-btn" type="button">Guess</button>
+                        <button id="skip-btn" type="button">Skip</button>
+                    </div>
                 </div>
             </div>
         `;
