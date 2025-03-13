@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Play Options - Guess the Song Year</title>
+    <title>Free Play Options - Yearworm</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=GRampart+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Free Play Options</h1>
-    <h2>Customize your experience</h2>
+    <div class="page-header">
+        <span class="font-icon free-icon">♫</span>
+        <h1>Free Play</h1>
+        <h2 id="mode-subtitle">Select options</h2>
+    </div>
 
     <div class="options-container">
         <div class="options-form">
@@ -36,12 +39,8 @@
                     Choose how you want to play:
                 </div>
                 <div class="checkbox-container">
-                    <input type="checkbox" id="title-option">
-                    <label for="title-option">Show Song Title</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="hint-option">
-                    <label for="hint-option">Enable Artist Hints</label>
+                    <input type="checkbox" id="enable-hints">
+                    <label for="enable-hints">Enable Hints</label>
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="unlimited-guesses">
@@ -65,20 +64,18 @@
             document.body.insertAdjacentHTML('beforeend', footerHTML);
 
             const startBtn = document.getElementById('start-btn');
-            const titleOption = document.getElementById('title-option');
-            const hintOption = document.getElementById('hint-option');
+            const enableHints = document.getElementById('enable-hints');
             const unlimitedGuessesOption = document.getElementById('unlimited-guesses');
             const normalModeOption = document.getElementById('normal-mode');
             const unlimitedModeOption = document.getElementById('unlimited-mode');
 
             startBtn.addEventListener('click', function() {
-                const showTitle = titleOption.checked;
-                const showArtist = hintOption.checked;
+                const hintsEnabled = enableHints.checked;
                 const unlimitedGuesses = unlimitedGuessesOption.checked;
                 const unlimitedMode = unlimitedModeOption.checked;
 
                 // Redirect to free play page with options as query parameters
-                window.location.href = `/free?title=${showTitle}&artist=${showArtist}&unlimited=${unlimitedGuesses}&unlimited_mode=${unlimitedMode}`;
+                window.location.href = `/free?hints=${hintsEnabled}&unlimited=${unlimitedGuesses}&unlimited_mode=${unlimitedMode}`;
             });
         });
     </script>

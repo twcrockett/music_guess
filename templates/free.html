@@ -3,20 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Play - Guess the Song Year</title>
+    <title>Free Play - Yearworm</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Rampart+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Free Play</h1>
-    <h2 id="mode-subtitle">Play as many songs as you want!</h2>
+    <div class="page-header">
+        <span class="font-icon free-icon">♫</span>
+        <h1>Free Play</h1>
+        <h2 id="mode-subtitle"></h2>
+    </div>
 
     <div class="game-container">
         <div class="game-header">
             <div class="round">Round: <span id="current-round">1</span></div>
-            <div class="score">Score: <span id="score">100</span></div>
+            <div id="score-container" class="score">
+                <span class="score-label">Score:</span>
+                <div class="score-circle">
+                    <span class="score-value" id="score">100</span>
+                </div>
+            </div>
+            <div id="avg-container" class="score" style="display: none;">
+                <span class="score-label">Avg:</span>
+                <div class="score-circle">
+                    <span class="score-value" id="avg-years-off">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="song-info-bar" id="song-info-bar">
+            <div class="song-info-item title">
+                <span id="title-display" class="unknown">Unknown song</span>
+                <button id="title-hint-btn" class="hint-icon" style="display: none;">?</button>
+            </div>
+            <div class="song-info-item artist">
+                <span id="artist-display" class="unknown">Unknown artist</span>
+                <button id="artist-hint-btn" class="hint-icon" style="display: none;">?</button>
+            </div>
+            <div class="song-info-item year"><span id="year-display" class="unknown">Unknown year</span></div>
         </div>
 
         <div class="player-container" id="player">
@@ -24,30 +50,8 @@
             <p>Loading song...</p>
         </div>
 
-        <div class="hint-section">
-            <div class="hint" id="title-hint" style="display: none;">
-                Title: <span id="title-display"></span>
-            </div>
-
-            <div class="hint" id="artist-hint" style="display: none;">
-                Artist: <span id="artist"></span>
-            </div>
-
-            <button id="hint-btn" class="hint-btn">Get Hint</button>
-        </div>
-
-        <div class="feedback" id="feedback"></div>
-
-        <div class="game-controls">
-            <button class="next-btn" id="next-btn" style="display: none;">Next Song</button>
-        </div>
-
-        <div class="song-info" id="song-info">
-            <h3>Song Info:</h3>
-            <p><strong>Title:</strong> <span id="title"></span></p>
-            <p><strong>Artist:</strong> <span id="artist-reveal"></span></p>
-            <p><strong>Year:</strong> <span id="year-reveal"></span></p>
-        </div>
+        <!-- Guess feedback will appear here -->
+        <div class="guess-feedback" id="guess-feedback"></div>
 
         <div class="home-links">
             <a href="/" class="home-btn">Back to Home</a>
@@ -70,6 +74,10 @@
                 </div>
             </div>
         </div>
+        <div class="next-song-arrow" id="next-btn">
+            <span class="arrow">▶</span>
+            <span class="text">Next</span>
+        </div>
     </div>
 
     <script src="/static/common.js"></script>
@@ -85,54 +93,152 @@
 
             // Game settings from URL parameters
             const urlParams = new URLSearchParams(window.location.search);
-            const showTitle = urlParams.get('title') === 'true';
-            const showArtist = urlParams.get('artist') === 'true';
+            const hintsEnabled = urlParams.get('hints') === 'true';
             const unlimitedGuesses = urlParams.get('unlimited') === 'true';
             const unlimitedMode = urlParams.get('unlimited_mode') === 'true';
 
-            console.log("Game settings:", { showTitle, showArtist, unlimitedGuesses, unlimitedMode });
+            console.log("Game settings:", { hintsEnabled, unlimitedGuesses, unlimitedMode });
 
             // Update subtitle based on game mode
             const modeSubtitle = document.getElementById('mode-subtitle');
             if (unlimitedMode) {
-                modeSubtitle.textContent = "Unlimited Mode - Play without score limits!";
+                modeSubtitle.textContent = "Unlimited Mode";
             } else {
-                modeSubtitle.textContent = "Normal Mode - Game ends when score drops below 0";
+                modeSubtitle.textContent = "Normal Mode";
             }
 
             // DOM elements for static elements
             const currentRoundSpan = document.getElementById('current-round');
             const scoreSpan = document.getElementById('score');
+            const scoreContainer = document.getElementById('score-container');
+            const avgContainer = document.getElementById('avg-container');
+            const avgYearsOffSpan = document.getElementById('avg-years-off');
             const playerContainer = document.getElementById('player');
-            const titleHint = document.getElementById('title-hint');
+            const songInfoBar = document.getElementById('song-info-bar');
             const titleDisplay = document.getElementById('title-display');
-            const artistHint = document.getElementById('artist-hint');
-            const artistSpan = document.getElementById('artist');
-            const hintBtn = document.getElementById('hint-btn');
-            const feedbackDiv = document.getElementById('feedback');
-            const songInfoDiv = document.getElementById('song-info');
-            const titleSpan = document.getElementById('title');
-            const artistReveal = document.getElementById('artist-reveal');
-            const yearReveal = document.getElementById('year-reveal');
+            const artistDisplay = document.getElementById('artist-display');
+            const yearDisplay = document.getElementById('year-display');
+            const hintsBtn = document.getElementById('hints-btn');
+            const guessFeedback = document.getElementById('guess-feedback');
             const nextBtn = document.getElementById('next-btn');
             const gameOverOverlay = document.getElementById('game-over-overlay');
             const finalRoundsSpan = document.getElementById('final-rounds');
             const finalScoreSpan = document.getElementById('final-score');
 
-            // Set up UI based on options
-            if (!showTitle && !showArtist) {
-                hintBtn.style.display = 'none';
+            // Initialize the score circle
+            if (unlimitedMode) {
+                initScoreCircle('avg-container', 'avg-years-off', 'Avg', true);
+            } else {
+                initScoreCircle('score-container', 'score');
+            }
+
+            // Set up tracking for average years off calculation
+            let totalYearsDifference = 0;
+            let totalRounds = 0;
+
+            // FIXED: Make sure next button is explicitly hidden on load
+            nextBtn.style.display = 'none';
+            nextBtn.classList.remove('visible');
+
+            // Toggle score/average display based on unlimited mode
+            if (unlimitedMode) {
+                scoreContainer.style.display = 'none';
+                avgContainer.style.display = 'flex';
+            } else {
+                scoreContainer.style.display = 'flex';
+                avgContainer.style.display = 'none';
+            }
+
+            // DOM elements for hint buttons
+            const titleHintBtn = document.getElementById('title-hint-btn');
+            const artistHintBtn = document.getElementById('artist-hint-btn');
+
+            // Set up hint buttons visibility based on hints setting
+            if (hintsEnabled) {
+                titleHintBtn.style.display = 'inline-block';
+                artistHintBtn.style.display = 'inline-block';
+            } else {
+                titleHintBtn.style.display = 'none';
+                artistHintBtn.style.display = 'none';
             }
 
             // Hide elements initially
-            feedbackDiv.style.display = 'none';
-            songInfoDiv.style.display = 'none';
-            nextBtn.style.display = 'none';
+            guessFeedback.style.display = 'none';
 
-            // Add event listener for the hint button (this one is static)
-            hintBtn.addEventListener('click', revealHint);
+            // Add event listeners for hint buttons
+            titleHintBtn.addEventListener('click', () => revealHint('title'));
+            artistHintBtn.addEventListener('click', () => revealHint('artist'));
 
-            // Add event listener for the next button (this one is static)
+            // Reveal a specific hint (title or artist)
+            function revealHint(type) {
+                // Only proceed if not already revealed
+                if ((type === 'title' && !titleDisplay.classList.contains('revealed')) ||
+                    (type === 'artist' && !artistDisplay.classList.contains('revealed'))) {
+
+                    // Get the current song data
+                    fetch('/get_song_info', {
+                        method: 'GET'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Reveal only the requested info
+                        if (type === 'title' && data.title) {
+                            titleDisplay.textContent = data.title;
+                            titleDisplay.className = 'revealed';
+                            titleHintBtn.style.display = 'none';
+                        } else if (type === 'artist' && data.artist) {
+                            artistDisplay.textContent = data.artist;
+                            artistDisplay.className = 'revealed';
+                            artistHintBtn.style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching song info:', error);
+                        // Fallback if fetch fails
+                        if (type === 'title') {
+                            titleDisplay.textContent = 'Title revealed';
+                            titleDisplay.className = 'revealed';
+                            titleHintBtn.style.display = 'none';
+                        } else if (type === 'artist') {
+                            artistDisplay.textContent = 'Artist revealed';
+                            artistDisplay.className = 'revealed';
+                            artistHintBtn.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            // Reveal all song info after guess
+            function revealAllSongInfo(artist, title, year, isCorrect) {
+                titleDisplay.textContent = title || 'Unknown';
+                titleDisplay.className = 'revealed';
+
+                artistDisplay.textContent = artist || 'Unknown';
+                artistDisplay.className = 'revealed';
+
+                yearDisplay.textContent = year;
+                yearDisplay.className = 'revealed';
+
+                // Apply the animation class to the year display
+                yearDisplay.classList.add('year-reveal-animation');
+
+                // Remove animation class after animation completes to allow it to be triggered again
+                setTimeout(() => {
+                    yearDisplay.classList.remove('year-reveal-animation');
+                }, 800); // Match duration with the CSS animation
+
+                if (isCorrect) {
+                    yearDisplay.classList.add('correct-year');
+                } else {
+                    yearDisplay.classList.add('incorrect-year');
+                }
+
+                // Hide hint buttons
+                titleHintBtn.style.display = 'none';
+                artistHintBtn.style.display = 'none';
+            }
+
+            // Add event listener for the next button
             nextBtn.addEventListener('click', loadNewSong);
 
             // Load the first song
@@ -143,12 +249,30 @@
                 console.log("Loading new song...");
 
                 // Reset UI for new song
-                titleHint.style.display = 'none';
-                artistHint.style.display = 'none';
-                feedbackDiv.style.display = 'none';
-                songInfoDiv.style.display = 'none';
+                guessFeedback.style.display = 'none';
+
+                // FIXED: Make sure next button is explicitly hidden
                 nextBtn.style.display = 'none';
-                hintBtn.disabled = false;
+                nextBtn.classList.remove('visible');
+
+                // Reset song info
+                titleDisplay.textContent = 'Unknown song';
+                titleDisplay.className = 'unknown';
+                artistDisplay.textContent = 'Unknown artist';
+                artistDisplay.className = 'unknown';
+                yearDisplay.textContent = 'Unknown year';
+                yearDisplay.className = 'unknown';
+
+                // Reset hint buttons if hints are enabled
+                if (hintsEnabled) {
+                    titleHintBtn.style.display = 'inline-block';
+                    titleHintBtn.disabled = false;
+                    artistHintBtn.style.display = 'inline-block';
+                    artistHintBtn.disabled = false;
+                } else {
+                    titleHintBtn.style.display = 'none';
+                    artistHintBtn.style.display = 'none';
+                }
 
                 // Fetch a new song
                 fetch('/get-song')
@@ -158,32 +282,14 @@
 
                         // Update UI
                         currentRoundSpan.textContent = song.round;
-                        scoreSpan.textContent = song.score;
 
-                        // Handle title/artist display
-                        if (song.title) {
-                            titleDisplay.textContent = song.title;
-                            // If the game starts with title visible
-                            if (showTitle && song.title) {
-                                titleHint.style.display = 'block';
-                            }
+                        // In normal mode, update score
+                        if (!unlimitedMode) {
+                            scoreSpan.textContent = song.score;
                         }
 
-                        if (song.artist) {
-                            artistSpan.textContent = song.artist;
-                            // If the game starts with artist visible
-                            if (showArtist && song.artist) {
-                                artistHint.style.display = 'block';
-                            }
-                        }
-
-                        // Update hidden song info
-                        titleSpan.textContent = song.title || "";
-                        artistReveal.textContent = song.artist || "";
-                        yearReveal.textContent = song.year;
-
-                        // Configure audio player (without showing title)
-                        setupAudioPlayer(playerContainer, song.previewUrl);
+                        // Configure audio player
+                        setupAudioPlayerNew(playerContainer, song.previewUrl);
 
                         // Add event listeners to the new buttons and input
                         const yearGuessInput = document.getElementById('year-guess');
@@ -253,13 +359,20 @@
                 .then(data => {
                     console.log("Guess response:", data);
 
-                    // Display feedback
-                    feedbackDiv.style.display = 'block';
-                    feedbackDiv.className = 'feedback';
+                    // Update score if provided (for normal mode)
+                    if (!unlimitedMode && data.new_score !== undefined) {
+                        updateScoreWithAnimation('score', data.new_score);
+                    }
 
-                    // Update score if provided
-                    if (data.new_score !== undefined) {
-                        scoreSpan.textContent = data.new_score;
+                    // Update average years off (for unlimited mode)
+                    if (unlimitedMode && data.year_difference !== undefined) {
+                        // Only update for correct guesses or if moving to next song
+                        if (data.result === 'correct' || data.result === 'incorrect') {
+                            totalYearsDifference += data.year_difference;
+                            totalRounds++;
+                            const avgYearsOff = (totalYearsDifference / totalRounds).toFixed(1);
+                            avgYearsOffSpan.textContent = avgYearsOff;
+                        }
                     }
 
                     // Check for game over (score < 0 and not in unlimited mode)
@@ -272,61 +385,65 @@
                     }
 
                     if (data.result === 'correct') {
-                        feedbackDiv.classList.add('correct');
-                        feedbackDiv.textContent = formatYearDifferenceFeedback(0, data.actual_year, true);
+                        // Correct guess
+                        guessFeedback.style.display = 'block';
+                        guessFeedback.className = 'guess-feedback correct';
+                        guessFeedback.textContent = formatYearDifferenceFeedback(0, data.actual_year, true);
 
-                        // Show song info and next button
-                        showSongInfo(data.artist, data.title);
+                        // Reveal all song info
+                        revealAllSongInfo(data.artist, data.title, data.actual_year, true);
 
                         // Disable buttons
                         if (guessBtn) guessBtn.disabled = true;
                         if (skipBtn) skipBtn.disabled = true;
-                        hintBtn.disabled = true;
+                        titleHintBtn.disabled = true;
+                        artistHintBtn.disabled = true;
+
+                        // FIXED: Show next button correctly
+                        nextBtn.style.display = 'flex';
+                        nextBtn.classList.add('visible');
                     } else if (data.result === 'incorrect') {
-                        feedbackDiv.classList.add('incorrect');
-                        feedbackDiv.textContent = formatYearDifferenceFeedback(data.year_difference, data.actual_year, false);
+                        // Incorrect guess but no more guesses allowed
+                        guessFeedback.style.display = 'block';
+                        guessFeedback.className = 'guess-feedback incorrect';
+                        guessFeedback.textContent = formatYearDifferenceFeedback(data.year_difference, data.actual_year, false);
 
-                        // Show song info and next button
-                        showSongInfo(data.artist, data.title);
+                        // Reveal all song info
+                        revealAllSongInfo(data.artist, data.title, data.actual_year, false);
 
                         // Disable buttons
                         if (guessBtn) guessBtn.disabled = true;
                         if (skipBtn) skipBtn.disabled = true;
-                        hintBtn.disabled = true;
+                            // Replace with these lines:
+                        titleHintBtn.disabled = true;
+                        artistHintBtn.disabled = true;
+
+                        // FIXED: Show next button correctly
+                        nextBtn.style.display = 'flex';
+                        nextBtn.classList.add('visible');
                     } else if (data.result === 'try_again') {
-                        // Unlimited guesses mode - just show hint
-                        feedbackDiv.classList.add('close');
-                        feedbackDiv.textContent = `Off by ${data.year_difference} years. Hint: Your guess is ${data.hint}.`;
+                        // Unlimited guesses mode - just show hint without revealing year
+                        guessFeedback.style.display = 'block';
+                        guessFeedback.className = 'guess-feedback hint';
+                        guessFeedback.textContent = `Hint: Your guess is ${data.hint}.`;
+
+                        // Update year display with hint and add animation
+                        yearDisplay.textContent = data.hint === 'too high' ? 'Too high' : 'Too low';
+                        yearDisplay.className = data.hint === 'too high' ? 'hint-high' : 'hint-low';
+
+                        // Apply animation to the hint as well
+                        yearDisplay.classList.add('year-reveal-animation');
+
+                        // Remove animation class after it completes
+                        setTimeout(() => {
+                            yearDisplay.classList.remove('year-reveal-animation');
+                        }, 800);
                     }
                 })
                 .catch(error => {
                     console.error('Error checking guess:', error);
                     alert('Something went wrong. Please try again.');
                 });
-            }
-
-            // Reveal hint
-            function revealHint() {
-                console.log("Revealing hint");
-
-                // Display available hints
-                let hintsRevealed = false;
-
-                if (showTitle && titleHint.style.display === 'none') {
-                    titleHint.style.display = 'block';
-                    hintsRevealed = true;
-                }
-
-                if (showArtist && artistHint.style.display === 'none') {
-                    artistHint.style.display = 'block';
-                    hintsRevealed = true;
-                }
-
-                // If all available hints are shown, disable the hint button
-                if (!hintsRevealed || (showTitle && showArtist &&
-                     titleHint.style.display !== 'none' && artistHint.style.display !== 'none')) {
-                    hintBtn.disabled = true;
-                }
             }
 
             // Skip song
@@ -368,41 +485,49 @@
                     }
 
                     // Display feedback
-                    feedbackDiv.style.display = 'block';
-                    feedbackDiv.className = 'feedback incorrect';
-                    feedbackDiv.textContent = `Skipped. This song was released in ${data.actual_year}. You lost 100 points.`;
+                    guessFeedback.style.display = 'block';
+                    guessFeedback.className = 'guess-feedback incorrect';
+                    guessFeedback.textContent = `Skipped. This song was released in ${data.actual_year}. You lost 100 points.`;
 
-                    // Update score
-                    if (data.new_score !== undefined) {
-                        scoreSpan.textContent = data.new_score;
+                    // Update score (for normal mode)
+                    if (!unlimitedMode && data.new_score !== undefined) {
+                        updateScoreWithAnimation('score', data.new_score);
                     }
 
-                    // Show song info and next button
-                    showSongInfo(data.artist, data.title);
+                    // Update average years off (for unlimited mode)
+                    if (unlimitedMode) {
+                        // For skips, add a penalty (e.g., 30 years)
+                        const skipPenalty = 30;
+                        totalYearsDifference += skipPenalty;
+                        totalRounds++;
+                        const avgYearsOff = (totalYearsDifference / totalRounds).toFixed(1);
+                        updateScoreWithAnimation('avg-years-off', avgYearsOff, true);
+                    }
+
+                    // Reveal all song info
+                    revealAllSongInfo(data.artist, data.title, data.actual_year, false);
+                    yearDisplay.className = 'revealed skipped-year';
+                    yearDisplay.classList.add('year-reveal-animation');
+
+                    // Remove animation class after it completes
+                    setTimeout(() => {
+                        yearDisplay.classList.remove('year-reveal-animation');
+                    }, 800);
 
                     // Disable buttons
                     if (guessBtn) guessBtn.disabled = true;
                     if (skipBtn) skipBtn.disabled = true;
-                    hintBtn.disabled = true;
+                    titleHintBtn.disabled = true;
+                    artistHintBtn.disabled = true;
+
+                    // FIXED: Show next button correctly
+                    nextBtn.style.display = 'flex';
+                    nextBtn.classList.add('visible');
                 })
                 .catch(error => {
                     console.error('Error skipping song:', error);
                     alert('Something went wrong. Please try again.');
                 });
-            }
-
-            // Show song info and next button
-            function showSongInfo(artist, title) {
-                songInfoDiv.style.display = 'block';
-                nextBtn.style.display = 'block';
-
-                // Make sure artist and title are displayed
-                if (artist && !artistReveal.textContent) {
-                    artistReveal.textContent = artist;
-                }
-                if (title && !titleSpan.textContent) {
-                    titleSpan.textContent = title;
-                }
             }
         });
     </script>

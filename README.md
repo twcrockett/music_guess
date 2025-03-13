@@ -1,14 +1,14 @@
-# [Guess the Song Year](https://music-guess-bynw.onrender.com/)
+# [Yearworm](https://music-guess-bynw.onrender.com/) <img alt="" height="60" src="https://github.com/twcrockett/song-guess-game/assets/logo.png"/>
+
 
 A web game that challenges players to guess the release year of popular songs. Play daily challenges or practice in free play mode!
 
-![Guess the Song Year](https://github.com/twcrockett/song-guess-game/blob/main/screenshot.png)
 
 ## The Game
 
-- **Daily Challenge**: 5 curated songs that change each day. Everyone gets the same songs for fair competition.
+- **Daily Challenge**: 5 rounds of curated songs that change each day. Everyone gets the same songs for fair competition.
 - **Free Play Mode**: Practice with as many songs as you like, with customizable options.
-- **Scoring System**: Start with 100 points and lose points over 5 rounds based on how far off your guesses are.
+- **Scoring System**: Start with 100 points and lose points over based on how far off your guesses are.
 
 ## How to Play
 

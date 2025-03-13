@@ -10,13 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Rampart+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Daily Challenge</h1>
-    <h2>Today's 5 songs - everyone gets the same ones!</h2>
+    <div class="page-header">
+        <span class="font-icon daily-icon">★</span>
+        <h1>Daily Challenge</h1>
+        <h2>Can you get the highest score?</h2>
+    </div>
 
-    <div class="game-container" id="game-container">
+    <div class="game-container daily-mode-container" id="game-container">
         <div class="game-header">
-            <div class="round">Round: <span id="current-round">1</span>/5</div>
-            <div class="score">Score: <span id="score">100</span></div>
+            <div class="round">Round: <span id="current-round">1</span>/5
+                <div class="progress-dots" id="progress-dots">
+                    <div class="dot" id="dot-1"></div>
+                    <div class="dot" id="dot-2"></div>
+                    <div class="dot" id="dot-3"></div>
+                    <div class="dot" id="dot-4"></div>
+                    <div class="dot" id="dot-5"></div>
+                </div>
+            </div>
+            <div class="score" id="score-container">
+                <span class="score-label">Score:</span>
+                <div class="score-circle">
+                    <span class="score-value" id="score">100</span>
+                </div>
+            </div>
         </div>
 
         <div id="daily-completed" style="display: none;">
@@ -30,23 +46,21 @@
         </div>
 
         <div id="game-content">
+            <!-- New song info bar that shows above the player (MOVED HERE) -->
+            <div class="song-info-bar" id="song-info-bar">
+                <div class="song-info-item title"><span id="title-display" class="unknown">Unknown song</span></div>
+                <div class="song-info-item artist"><span id="artist-display" class="unknown">Unknown artist</span></div>
+                <div class="song-info-item year"><span id="year-display" class="unknown">Unknown year</span></div>
+            </div>
+
+            <!-- Player container now appears below song info -->
             <div class="player-container" id="player">
                 <!-- The song player will be injected here -->
                 <p>Loading song...</p>
             </div>
 
-            <div class="feedback" id="feedback"></div>
-
-            <div class="game-controls">
-                <button class="next-btn" id="next-btn" style="display: none;">Next Song</button>
-            </div>
-
-            <div class="song-info" id="song-info">
-                <h3>Song Info:</h3>
-                <p><strong>Title:</strong> <span id="title"></span></p>
-                <p><strong>Artist:</strong> <span id="artist-reveal"></span></p>
-                <p><strong>Year:</strong> <span id="year-reveal"></span></p>
-            </div>
+            <!-- Guess feedback will appear here -->
+            <div class="guess-feedback" id="guess-feedback"></div>
         </div>
 
         <!-- Game Over Modal -->
@@ -71,6 +85,10 @@
                 </div>
             </div>
         </div>
+        <div class="next-song-arrow" id="next-btn">
+            <span class="arrow">▶</span>
+            <span class="text">Next</span>
+        </div>
     </div>
 
     <script src="/static/common.js"></script>
@@ -86,15 +104,14 @@
             const currentRoundSpan = document.getElementById('current-round');
             const scoreSpan = document.getElementById('score');
             const playerContainer = document.getElementById('player');
-            const feedbackDiv = document.getElementById('feedback');
-            const songInfoDiv = document.getElementById('song-info');
-            const titleSpan = document.getElementById('title');
-            const artistReveal = document.getElementById('artist-reveal');
-            const yearReveal = document.getElementById('year-reveal');
+            const songInfoBar = document.getElementById('song-info-bar');
+            const titleDisplay = document.getElementById('title-display');
+            const artistDisplay = document.getElementById('artist-display');
+            const yearDisplay = document.getElementById('year-display');
+            const guessFeedback = document.getElementById('guess-feedback');
             const nextBtn = document.getElementById('next-btn');
             const gameOverDiv = document.getElementById('game-over');
             const gameOverOverlay = document.getElementById('game-over-overlay');
-            const finalScoreDiv = document.getElementById('final-score');
             const gameOverMessage = document.getElementById('game-over-message');
             const copyResultsBtn = document.getElementById('copy-results-btn');
             const copySuccess = document.getElementById('copy-success');
@@ -103,22 +120,54 @@
             const previousScoreSpan = document.getElementById('previous-score');
             const gameContent = document.getElementById('game-content');
 
+            // Initialize the score circle
+            initScoreCircle('score-container', 'score');
+
+            // FIXED: Make sure next button is explicitly hidden on load
+            nextBtn.style.display = 'none';
+            nextBtn.classList.remove('visible');
+
+            // Session data - keeps track of game state
+            let session = { currentRound: 0 };
+
             // Track song results for the copy feature and results grid
             let songResults = [];
             let currentDate = new Date().toISOString().split('T')[0];
 
             // Check if user already completed today's challenge
-            checkDailyCompletion();
+            const isCompleted = checkDailyCompletion();
 
             // Hide elements initially
-            feedbackDiv.style.display = 'none';
-            songInfoDiv.style.display = 'none';
+            guessFeedback.style.display = 'none';
             gameOverOverlay.style.display = 'none';
             copySuccess.style.display = 'none';
 
+            // Check for in-progress session
+            const hasProgress = checkDailyProgress();
+
             // Load the first song if not already completed
-            if (dailyCompletedDiv.style.display === 'none') {
-                loadNewSong();
+            if (!isCompleted) {
+                if (!hasProgress) {
+                    // Brand new game
+                    loadNewSong();
+                } else {
+                    // Resume from progress
+                    loadNewSong();
+                }
+            } else {
+                // NEW: Update the progress dots and round counter when showing completed state
+                currentRoundSpan.textContent = "5";
+                updateProgressDots(5);
+
+                // NEW: Retrieve and display the saved score
+                try {
+                    const dailyRecord = JSON.parse(localStorage.getItem('dailyChallenge'));
+                    if (dailyRecord && dailyRecord.date === currentDate) {
+                        scoreSpan.textContent = dailyRecord.score;
+                    }
+                } catch (e) {
+                    console.error('Error retrieving daily record:', e);
+                }
             }
 
             // Event listener for next button
@@ -126,6 +175,87 @@
 
             // Event listener for copy results button
             copyResultsBtn.addEventListener('click', copyResults);
+
+            // Function to check for and load progress
+            function checkDailyProgress() {
+                try {
+                    const dailyProgress = localStorage.getItem('dailyProgress');
+                    if (dailyProgress) {
+                        const progress = JSON.parse(dailyProgress);
+
+                        // Check if the progress is for today
+                        if (progress.date === currentDate) {
+                            console.log("Found in-progress daily challenge");
+
+                            // If user has completed some rounds but not all
+                            if (progress.currentRound > 0 && progress.currentRound < 5) {
+                                // Update the round counter
+                                session.currentRound = progress.currentRound;
+
+                                // Update the score - IMPORTANT: Use updateScoreWithAnimation for visual update
+                                if (progress.score !== undefined) {
+                                    console.log("Restoring score to:", progress.score);
+                                    scoreSpan.textContent = progress.score;
+                                    // Properly update the score circle appearance
+                                    updateScoreCircleClass('score', progress.score);
+                                }
+
+                                // Update the song results array
+                                if (progress.results && Array.isArray(progress.results)) {
+                                    songResults = progress.results;
+                                }
+
+                                // Update progress dots
+                                currentRoundSpan.textContent = progress.currentRound;
+                                updateProgressDots(progress.currentRound);
+
+                                // Log the restored state
+                                console.log("Restored game state - Round:", progress.currentRound, "Score:", progress.score);
+
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                } catch (e) {
+                    console.error('Error checking daily progress:', e);
+                    return false;
+                }
+            }
+
+            // Save progress after each round
+            function saveDailyProgress() {
+                try {
+                    const progress = {
+                        date: currentDate,
+                        currentRound: session.currentRound || parseInt(currentRoundSpan.textContent),
+                        score: parseInt(scoreSpan.textContent),
+                        results: songResults
+                    };
+                    localStorage.setItem('dailyProgress', JSON.stringify(progress));
+                    console.log("Progress saved:", progress);
+                } catch (e) {
+                    console.error('Error saving daily progress:', e);
+                }
+            }
+
+            // Update progress dots
+            function updateProgressDots(currentRound) {
+                // Get all dots
+                const dots = document.querySelectorAll('.dot');
+
+                // Reset all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+
+                // Activate dots up to current round
+                for (let i = 0; i < currentRound; i++) {
+                    if (dots[i]) {
+                        dots[i].classList.add('active');
+                    }
+                }
+            }
 
             // Check if user already completed today's challenge
             function checkDailyCompletion() {
@@ -139,7 +269,22 @@
                             // User already completed today's challenge
                             dailyCompletedDiv.style.display = 'block';
                             gameContent.style.display = 'none';
-                            previousScoreSpan.textContent = record.score;
+
+                            // Update score display with the final score
+                            const finalScore = record.score;
+                            console.log("Showing completed daily with score:", finalScore);
+
+                            // First update the text content
+                            previousScoreSpan.textContent = finalScore;
+                            scoreSpan.textContent = finalScore;
+
+                            // Then update the score circle appearance
+                            updateScoreCircleClass('score', finalScore);
+
+                            // Make sure progress dots show 5/5 completed
+                            currentRoundSpan.textContent = "5";
+                            updateProgressDots(5);
+
                             return true;
                         }
                     }
@@ -151,14 +296,28 @@
             }
 
             // Save daily completion record
-            function saveDailyCompletion(score) {
+            function saveDailyCompletion(finalScore) {
                 try {
+                    // Ensure we're using the numeric value of the score
+                    const scoreValue = parseInt(finalScore);
+
+                    console.log("Saving daily completion with score:", scoreValue);
+
+                    // Create a comprehensive record with all game data
                     const record = {
                         date: currentDate,
-                        score: score,
-                        results: songResults
+                        score: scoreValue,
+                        results: songResults,
+                        completedAt: new Date().toISOString()
                     };
+
+                    // Save to localStorage
                     localStorage.setItem('dailyChallenge', JSON.stringify(record));
+
+                    // Clear the in-progress data when fully completed
+                    localStorage.removeItem('dailyProgress');
+
+                    console.log("Daily challenge saved and progress cleared");
                 } catch (e) {
                     console.error('Error saving daily completion:', e);
                 }
@@ -167,9 +326,19 @@
             // Load a new song
             function loadNewSong() {
                 // Reset the game state for this round
-                feedbackDiv.style.display = 'none';
-                songInfoDiv.style.display = 'none';
+                guessFeedback.style.display = 'none';
+
+                // FIXED: Make sure next button is explicitly hidden
                 nextBtn.style.display = 'none';
+                nextBtn.classList.remove('visible');
+
+                // Reset song info
+                titleDisplay.textContent = 'Unknown song';
+                titleDisplay.className = 'unknown';
+                artistDisplay.textContent = 'Unknown artist';
+                artistDisplay.className = 'unknown';
+                yearDisplay.textContent = 'Unknown year';
+                yearDisplay.className = 'unknown';
 
                 // Fetch a new song
                 fetch('/get-song')
@@ -181,17 +350,17 @@
                             return;
                         }
 
+                        // Update session data
+                        session.currentRound = song.round;
+
                         // Update UI
                         currentRoundSpan.textContent = song.round;
                         scoreSpan.textContent = song.score;
 
-                        // Update song info
-                        titleSpan.textContent = song.title || "";
-                        artistReveal.textContent = song.artist || "";
-                        yearReveal.textContent = song.year;
+                        updateProgressDots(song.round);
 
                         // Setup the audio player with form controls
-                        setupAudioPlayer(playerContainer, song.previewUrl);
+                        setupAudioPlayerNew(playerContainer, song.previewUrl);
 
                         // Add event listeners to the new buttons and input
                         const yearGuessInput = document.getElementById('year-guess');
@@ -257,41 +426,73 @@
                         yearDifference: data.year_difference
                     });
 
-                    // Display feedback
-                    feedbackDiv.style.display = 'block';
-                    feedbackDiv.className = 'feedback';
+                    // Update round
+                    if (data.round) {
+                        session.currentRound = data.round;
+                        updateProgressDots(data.round);
+                    } else if (data.game_over) {
+                        updateProgressDots(5); // All dots filled at game over
+                    }
 
                     // Update score
                     if (data.new_score !== undefined) {
-                        scoreSpan.textContent = data.new_score;
+                        updateScoreWithAnimation('score', data.new_score);
                     }
+
+                    // Display feedback
+                    guessFeedback.style.display = 'block';
+                    guessFeedback.className = 'guess-feedback';
 
                     if (data.result === 'correct') {
-                        feedbackDiv.classList.add('correct');
-                        feedbackDiv.textContent = formatYearDifferenceFeedback(0, data.actual_year, true);
+                        guessFeedback.classList.add('correct');
+                        guessFeedback.textContent = formatYearDifferenceFeedback(0, data.actual_year, true);
                     } else {
-                        feedbackDiv.classList.add('incorrect');
-                        feedbackDiv.textContent = formatYearDifferenceFeedback(data.year_difference, data.actual_year, false);
+                        guessFeedback.classList.add('incorrect');
+                        guessFeedback.textContent = formatYearDifferenceFeedback(data.year_difference, data.actual_year, false);
                     }
 
-                    // Show song info
-                    songInfoDiv.style.display = 'block';
+                    // Update song info bar
                     if (data.artist) {
-                        artistReveal.textContent = data.artist;
+                        artistDisplay.textContent = data.artist;
+                        artistDisplay.className = 'revealed';
                     }
                     if (data.title) {
-                        titleSpan.textContent = data.title;
+                        titleDisplay.textContent = data.title;
+                        titleDisplay.className = 'revealed';
+                    }
+
+                    // Update year display
+                    yearDisplay.textContent = data.actual_year;
+                    yearDisplay.className = 'revealed';
+
+                    // Add animation class
+                    yearDisplay.classList.add('year-reveal-animation');
+
+                    // Remove animation class after it completes
+                    setTimeout(() => {
+                        yearDisplay.classList.remove('year-reveal-animation');
+                    }, 800);
+
+                    if (data.year_difference === 0) {
+                        yearDisplay.classList.add('correct-year');
+                    } else {
+                        yearDisplay.classList.add('incorrect-year');
                     }
 
                     // Disable buttons
                     if (guessBtn) guessBtn.disabled = true;
                     if (skipBtn) skipBtn.disabled = true;
 
+                    // Save progress after the guess
+                    saveDailyProgress();
+
                     // If not game over, show next button
                     if (data.game_over) {
                         showGameOver(data.new_score);
                     } else {
-                        nextBtn.style.display = 'block';
+                        // FIXED: Show next button correctly
+                        nextBtn.style.display = 'flex';
+                        nextBtn.classList.add('visible');
                     }
                 })
                 .catch(error => {
@@ -337,33 +538,58 @@
                     });
 
                     // Display feedback
-                    feedbackDiv.style.display = 'block';
-                    feedbackDiv.className = 'feedback incorrect';
-                    feedbackDiv.textContent = `Skipped. This song was released in ${data.actual_year}. You lost 100 points!`;
+                    guessFeedback.style.display = 'block';
+                    guessFeedback.className = 'guess-feedback incorrect';
+                    guessFeedback.textContent = `Skipped. This song was released in ${data.actual_year}. You lost 100 points!`;
+
+                    // Update round
+                    if (data.round) {
+                        session.currentRound = data.round;
+                        updateProgressDots(data.round);
+                    } else if (data.game_over) {
+                        updateProgressDots(5); // All dots filled at game over
+                    }
 
                     // Update score
                     if (data.new_score !== undefined) {
-                        scoreSpan.textContent = data.new_score;
+                        updateScoreWithAnimation('score', data.new_score);
                     }
 
-                    // Show song info
-                    songInfoDiv.style.display = 'block';
+                    // Update song info bar
                     if (data.artist) {
-                        artistReveal.textContent = data.artist;
+                        artistDisplay.textContent = data.artist;
+                        artistDisplay.className = 'revealed';
                     }
                     if (data.title) {
-                        titleSpan.textContent = data.title;
+                        titleDisplay.textContent = data.title;
+                        titleDisplay.className = 'revealed';
                     }
+
+                    yearDisplay.textContent = data.actual_year;
+                    yearDisplay.className = 'revealed skipped-year';
+
+                    // Add animation class
+                    yearDisplay.classList.add('year-reveal-animation');
+
+                    // Remove animation class after it completes
+                    setTimeout(() => {
+                        yearDisplay.classList.remove('year-reveal-animation');
+                    }, 800);
 
                     // Disable buttons
                     if (guessBtn) guessBtn.disabled = true;
                     if (skipBtn) skipBtn.disabled = true;
 
+                    // Save progress after the skip
+                    saveDailyProgress();
+
                     // If not game over, show next button
                     if (data.game_over) {
                         showGameOver(data.new_score);
                     } else {
-                        nextBtn.style.display = 'block';
+                        // FIXED: Show next button correctly
+                        nextBtn.style.display = 'flex';
+                        nextBtn.classList.add('visible');
                     }
                 })
                 .catch(error => {
@@ -435,7 +661,7 @@
                 const scoreText = scoreSpan.textContent;
 
                 // Build the full text
-                const copyText = `Guess the Song Year ${formattedDate}\n${yearDiffs}\nFinal Score: ${scoreText}`;
+                const copyText = `Yearworm ${formattedDate}\n${yearDiffs}\nFinal Score: ${scoreText}`;
 
                 // Copy to clipboard
                 navigator.clipboard.writeText(copyText).then(() => {
@@ -457,11 +683,21 @@
                 // Set game over message
                 gameOverMessage.textContent = generateGameOverMessage(finalScore);
 
+                // Update score display with the final score
+                scoreSpan.textContent = finalScore;
+                updateScoreCircleClass('score', finalScore);
+
+                // Make sure progress dots show 5/5 completed
+                currentRoundSpan.textContent = "5";
+                updateProgressDots(5);
+
                 // Show the modal
                 gameOverOverlay.style.display = 'flex';
 
                 // Save to localStorage to prevent replay
                 saveDailyCompletion(finalScore);
+
+                console.log("Game over shown with final score:", finalScore);
             }
         });
     </script>

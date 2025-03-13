@@ -6,7 +6,10 @@
 const navbarHTML = `
 <nav class="navbar">
     <div class="navbar-container">
-        <a href="/" class="navbar-logo">Guess the Song Year</a>
+        <a href="/" class="navbar-logo">
+            <img src="/static/logo.png" alt="Yearworm Logo" class="navbar-logo-img">
+            Yearworm
+        </a>
         <ul class="navbar-menu">
             <li><a href="/" class="navbar-item">Home</a></li>
             <li><a href="/daily" class="navbar-item">Daily Challenge</a></li>
@@ -121,19 +124,18 @@ function validateYearInput(year) {
     return { valid: true };
 }
 
-// Helper function to set up audio player with guessing form
-function setupAudioPlayer(container, previewUrl, title = null) {
+// Helper function to set up audio player with guessing form (improved version)
+function setupAudioPlayerNew(container, previewUrl) {
     if (previewUrl) {
-        // No title in the player display
+        // More streamlined player without "Now Playing" text
         container.innerHTML = `
             <div class="audio-player">
-                <p>Now Playing...</p>
-                <audio id="song-audio" preload="auto" controls>
+                <audio id="song-audio" preload="auto" controlsList="nodownload nospeed" controls>
                     <source src="${previewUrl}" type="audio/mp4">
                     Your browser does not support the audio element.
                 </audio>
                 <div class="guess-form">
-                    <input type="number" id="year-guess" placeholder="Enter year (e.g., 1985)" min="1900" max="2024">
+                    <input type="number" id="year-guess" placeholder="Enter year" min="1900" max="2024">
                     <div class="button-group">
                         <button id="guess-btn" type="button">Guess</button>
                         <button id="skip-btn" type="button">Skip</button>
@@ -144,6 +146,15 @@ function setupAudioPlayer(container, previewUrl, title = null) {
 
         // Get the audio element
         const audio = document.getElementById('song-audio');
+
+        // Set initial volume from localStorage or use default 0.5 (50%)
+        const savedVolume = localStorage.getItem('yearworm_volume');
+        audio.volume = savedVolume !== null ? parseFloat(savedVolume) : 0.5;
+
+        // Save volume preference when user adjusts it
+        audio.addEventListener('volumechange', function() {
+            localStorage.setItem('yearworm_volume', audio.volume);
+        });
 
         // Set autoplay after a slight delay to avoid some browser issues
         setTimeout(() => {
@@ -174,6 +185,11 @@ function setupAudioPlayer(container, previewUrl, title = null) {
     }
 }
 
+// Keep the old function for backward compatibility
+function setupAudioPlayer(container, previewUrl, title = null) {
+    return setupAudioPlayerNew(container, previewUrl);
+}
+
 // Add event listener for enter key on year input
 function setupEnterKeyForGuess(inputElement, buttonElement) {
     inputElement.addEventListener('keyup', function(event) {
@@ -184,9 +200,112 @@ function setupEnterKeyForGuess(inputElement, buttonElement) {
     });
 }
 
+// Helper function to show the next button
+function showNextButton(nextBtnElement) {
+    if (nextBtnElement) {
+        nextBtnElement.style.display = 'flex';
+        nextBtnElement.classList.add('visible');
+    }
+}
+
+/**
+ * Initialize the score circle by replacing the current score display
+ * @param {string} containerId - ID of the container element
+ * @param {string} scoreId - ID of the score span element
+ * @param {string} label - Label to show (e.g., "Score" or "Avg")
+ * @param {boolean} isAverage - Whether this is an average score (changes styling)
+ */
+function initScoreCircle(containerId, scoreId, label = "Score", isAverage = false) {
+    const container = document.getElementById(containerId);
+    const scoreSpan = document.getElementById(scoreId);
+
+    if (!container || !scoreSpan) return;
+
+    // Get the current score value
+    const currentValue = scoreSpan.textContent;
+
+    // Ensure container is using flex display
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.gap = '12px';
+
+    // Create the new structure - with label to the left of the circle
+    const circleHtml = `
+        <span class="score-label">${label}:</span>
+        <div class="score-circle ${isAverage ? 'avg-score' : ''}">
+            <span class="score-value score-transition" id="${scoreId}">${currentValue}</span>
+        </div>
+    `;
+
+    // Replace the container contents
+    container.innerHTML = circleHtml;
+
+    // Update circle class based on score
+    updateScoreCircleClass(scoreId, parseFloat(currentValue), isAverage);
+}
+
+/**
+ * Update the score and trigger animation
+ * @param {string} scoreId - ID of the score span element
+ * @param {number} newValue - New score value
+ * @param {boolean} isAverage - Whether this is an average score
+ */
+function updateScoreWithAnimation(scoreId, newValue, isAverage = false) {
+    const scoreSpan = document.getElementById(scoreId);
+    if (!scoreSpan) return;
+
+    const oldValue = parseFloat(scoreSpan.textContent);
+
+    // Update the value
+    scoreSpan.textContent = newValue;
+
+    // Get parent circle
+    const scoreCircle = scoreSpan.closest('.score-circle');
+    if (!scoreCircle) return;
+
+    // Add animation class
+    scoreCircle.classList.add('score-change');
+
+    // Update the circle class based on new value
+    updateScoreCircleClass(scoreId, newValue, isAverage);
+
+    // Remove animation class after animation completes
+    setTimeout(() => {
+        scoreCircle.classList.remove('score-change');
+    }, 600);
+}
+
+/**
+ * Update the score circle class based on value
+ * @param {string} scoreId - ID of the score span element
+ * @param {number} value - Score value
+ * @param {boolean} isAverage - Whether this is an average score
+ */
+function updateScoreCircleClass(scoreId, value, isAverage = false) {
+    const scoreSpan = document.getElementById(scoreId);
+    if (!scoreSpan) return;
+
+    const scoreCircle = scoreSpan.closest('.score-circle');
+    if (!scoreCircle) return;
+
+    // Remove existing classes
+    scoreCircle.classList.remove('low-score', 'high-score');
+
+    // Don't add color classes for average mode
+    if (isAverage) return;
+
+    // Add appropriate class based on score
+    if (value < 50) {
+        scoreCircle.classList.add('low-score');
+    } else if (value >= 80) {
+        scoreCircle.classList.add('high-score');
+    }
+}
+
+
 // Common footer HTML
 const footerHTML = `
 <footer>
-    <p><a href="https://twcrockett.github.io/" target="_blank"><img src="https://avatars.githubusercontent.com/u/79346208?v=4" class="footer-avatar" alt="Tay's avatar"></a> Made by Tay | <a href="https://github.com/twcrockett/song-guess-game" target="_blank">GitHub</a></p>
+    <p><a href="https://twcrockett.github.io/" target="_blank"><img src="https://avatars.githubusercontent.com/u/79346208?v=4" class="footer-avatar" alt="Tay's avatar"></a> Made by Tay | <a href="https://github.com/twcrockett/yearworm" target="_blank">GitHub</a></p>
 </footer>
 `;

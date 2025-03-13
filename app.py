@@ -262,17 +262,41 @@ def index():
 
 @app.route('/daily')
 def daily_challenge():
-    # Initialize a new daily challenge
-    session.clear()  # Clear any existing session
-    session['game_mode'] = 'daily'
-    session['score'] = 100
-    session['current_round'] = 0
+    # Check if there's already a session for daily challenge
+    if 'game_mode' in session and session['game_mode'] == 'daily':
+        # Keep existing session data (don't reset current_round or score)
+        current_round = session.get('current_round', 0)
+        current_score = session.get('score', 100)
+        print(f"Resuming daily challenge at round {current_round} with score {current_score}")
+    else:
+        # Initialize a new daily challenge
+        session.clear()
+        session['game_mode'] = 'daily'
+        session['score'] = 100
+        session['current_round'] = 0
+        print("Starting new daily challenge")
 
     # Get daily songs
     daily_songs = get_daily_songs()
     session['daily_songs'] = daily_songs
 
     return render_template('daily.html')
+
+
+@app.route('/get_song_info', methods=['GET'])
+def get_song_info():
+    # Get the current song from the session
+    current_song = session.get('current_song', {})
+
+    if not current_song:
+        return jsonify({"error": "No song information available"}), 404
+
+    # Return title and artist for hints
+    return jsonify({
+        "title": current_song.get('title', ''),
+        "artist": current_song.get('artist', ''),
+        "year": current_song.get('year', 0)
+    })
 
 
 @app.route('/free')
@@ -283,22 +307,20 @@ def free_play():
     session['score'] = 100
     session['current_round'] = 0
 
-    # Get options from query parameters
-    show_title = request.args.get('title', 'false').lower() == 'true'
-    show_artist = request.args.get('artist', 'false').lower() == 'true'
+    # Get options from query parameters with new hints parameter
+    hints_enabled = request.args.get('hints', 'false').lower() == 'true'
     unlimited_guesses = request.args.get('unlimited', 'false').lower() == 'true'
     unlimited_mode = request.args.get('unlimited_mode', 'false').lower() == 'true'
 
-    session['show_title'] = show_title
-    session['show_artist'] = show_artist
+    # Store settings in session
+    session['hints_enabled'] = hints_enabled
     session['unlimited_guesses'] = unlimited_guesses
     session['unlimited_mode'] = unlimited_mode
 
     return render_template('free.html',
-                           show_title=show_title,
-                           show_artist=show_artist,
-                           unlimited_guesses=unlimited_guesses,
-                           unlimited_mode=unlimited_mode)
+                          hints_enabled=hints_enabled,
+                          unlimited_guesses=unlimited_guesses,
+                          unlimited_mode=unlimited_mode)
 
 
 @app.route('/free_options')
@@ -360,14 +382,10 @@ def get_song():
             "year": song["year"]
         }
 
-        # Only reveal artist/title in free mode if enabled in options
-        show_artist = game_mode == 'free' and session.get('show_artist', False)
-        show_title = game_mode == 'free' and session.get('show_title', False)
-
         # Return song info with preview URL
         response_data = {
-            "title": song["title"] if show_title else None,
-            "artist": song["artist"] if show_artist else None,
+            "title": None,  # Don't reveal title by default
+            "artist": None,  # Don't reveal artist by default
             "year": song["year"],  # This will be hidden on the frontend
             "previewUrl": preview_url,
             "round": current_round + 1,
@@ -387,8 +405,8 @@ def get_song():
             fallback_song = random.choice(songs)
             print(f"Using fallback song: {fallback_song['title']}")
             return jsonify({
-                "title": fallback_song["title"],
-                "artist": fallback_song["artist"] if game_mode == 'free' else None,
+                "title": None,
+                "artist": None,
                 "year": fallback_song["year"],
                 "previewUrl": get_preview_url(fallback_song["title"], fallback_song["artist"]),
                 "round": 1,
@@ -435,6 +453,9 @@ def check_guess():
         game_mode = session.get('game_mode', 'free')
         score = session.get('score', 100)
 
+        # Log the current state before changes
+        print(f"Before guess - Mode: {game_mode}, Round: {session.get('current_round', 0)}, Score: {score}")
+
         # Apply the skip penalty (100 points) if this is a skip
         if is_skip:
             points_lost = 100
@@ -445,13 +466,16 @@ def check_guess():
             # In daily mode, subtract points based on how far off the guess is
             # Now allowing negative scores
             new_score = score - points_lost
-            session['score'] = new_score
+            session['score'] = new_score  # Update the session score
 
             # Move to next round
-            session['current_round'] = session.get('current_round', 0) + 1
+            current_round = session.get('current_round', 0) + 1
+            session['current_round'] = current_round
 
             # Check if game is over
-            game_over = session['current_round'] >= 5
+            game_over = current_round >= 5
+
+            print(f"After guess - Round: {current_round}, Score: {new_score}, Game Over: {game_over}")
 
             # Save guess history to session for the results copy feature
             if 'guess_history' not in session:
@@ -473,7 +497,7 @@ def check_guess():
                 "points_lost": points_lost,
                 "new_score": new_score,
                 "game_over": game_over,
-                "round": session['current_round'],
+                "round": current_round,
                 "artist": current_song.get('artist', ''),
                 "title": current_song.get('title', '')
             })
