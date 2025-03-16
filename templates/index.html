@@ -78,7 +78,8 @@
                 .then(data => {
                     const songCountElement = document.getElementById('song-count');
                     if (data.count) {
-                        songCountElement.textContent = `Currently featuring ${data.count} songs from 1900 to present`;
+                        const count = Number(data.count);
+                        songCountElement.textContent = `Currently featuring ${count.toLocaleString()} songs from 1900 to present`;
                     } else {
                         songCountElement.textContent = `Song selection is limited to the year 1900 and after`;
                     }
