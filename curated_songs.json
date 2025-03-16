@@ -106,5 +106,356 @@
       "artist": "Travis Scott",
       "year": 2018
     }
+  ],
+  "2025-03-16": [
+    {
+      "title": "Dance Monkey",
+      "artist": "Tones and I",
+      "year": 2019
+    },
+    {
+      "title": "Hound Dog",
+      "artist": "Elvis Presley",
+      "year": 1956
+    },
+    {
+      "title": "Despacito",
+      "artist": "Luis Fonsi ft. Daddy Yankee",
+      "year": 2017
+    },
+    {
+      "title": "Hotel California",
+      "artist": "Eagles",
+      "year": 1976
+    },
+    {
+      "title": "Complicated",
+      "artist": "Avril Lavigne",
+      "year": 2002
+    }
+  ],
+  "2025-03-17": [
+    {
+      "title": "Tunak Tunak Tun",
+      "artist": "Daler Mehndi",
+      "year": 1998
+    },
+    {
+      "title": "California Gurls",
+      "artist": "Katy Perry ft. Snoop Dogg",
+      "year": 2010
+    },
+    {
+      "title": "Shallow",
+      "artist": "Lady Gaga & Bradley Cooper",
+      "year": 2018
+    },
+    {
+      "title": "Suite bergamasque: \"Clair de lune\"",
+      "artist": "Claude Debussy",
+      "year": 1905
+    },
+    {
+      "title": "California Love",
+      "artist": "2Pac ft. Dr. Dre",
+      "year": 1995
+    }
+  ],
+  "2025-03-18": [
+    {
+      "title": "Hello",
+      "artist": "Adele",
+      "year": 2015
+    },
+    {
+      "title": "Blue Bayou",
+      "artist": "Linda Ronstadt",
+      "year": 1977
+    },
+    {
+      "title": "Get Lucky",
+      "artist": "Daft Punk ft. Pharrell Williams",
+      "year": 2013
+    },
+    {
+      "title": "Karma Chameleon",
+      "artist": "Culture Club",
+      "year": 1983
+    },
+    {
+      "title": "Buffalo Soldier",
+      "artist": "Bob Marley & The Wailers",
+      "year": 1983
+    }
+  ],
+  "2025-03-19": [
+    {
+      "title": "Girls Just Want to Have Fun",
+      "artist": "Cyndi Lauper",
+      "year": 1983
+    },
+    {
+      "title": "Roxanne",
+      "artist": "The Police",
+      "year": 1978
+    },
+    {
+      "title": "La Bamba",
+      "artist": "Ritchie Valens",
+      "year": 1958
+    },
+    {
+      "title": "Running Up That Hill",
+      "artist": "Kate Bush",
+      "year": 1985
+    },
+    {
+      "title": "Empire State of Mind",
+      "artist": "Jay-Z ft. Alicia Keys",
+      "year": 2009
+    }
+  ],
+  "2025-03-20": [
+    {
+      "title": "Hotline Bling",
+      "artist": "Drake",
+      "year": 2015
+    },
+    {
+      "title": "Never Gonna Give You Up",
+      "artist": "Rick Astley",
+      "year": 1987
+    },
+    {
+      "title": "Dynamite",
+      "artist": "BTS",
+      "year": 2020
+    },
+    {
+      "title": "Blurred Lines",
+      "artist": "Robin Thicke ft. T.I. & Pharrell",
+      "year": 2013
+    },
+    {
+      "title": "Love Story",
+      "artist": "Taylor Swift",
+      "year": 2008
+    }
+  ],
+  "2025-03-21": [
+    {
+      "title": "Smoke Gets in Your Eyes",
+      "artist": "Paul Whiteman Orchestra",
+      "year": 1933
+    },
+    {
+      "title": "Friday I'm in Love",
+      "artist": "The Cure",
+      "year": 1992
+    },
+    {
+      "title": "Pumped Up Kicks",
+      "artist": "Foster the People",
+      "year": 2011
+    },
+    {
+      "title": "Celebration",
+      "artist": "Kool & The Gang",
+      "year": 1980
+    },
+    {
+      "title": "Clocks",
+      "artist": "Coldplay",
+      "year": 2002
+    }
+  ],
+  "2025-03-22": [
+    {
+      "title": "Sweet Dreams (Are Made of This)",
+      "artist": "Eurythmics",
+      "year": 1983
+    },
+    {
+      "title": "Drivers License",
+      "artist": "Olivia Rodrigo",
+      "year": 2021
+    },
+    {
+      "title": "Strange Fruit",
+      "artist": "Billie Holiday",
+      "year": 1939
+    },
+    {
+      "title": "Plastic Love",
+      "artist": "Mariya Takeuchi",
+      "year": 1984
+    },
+    {
+      "title": "Paranoid Android",
+      "artist": "Radiohead",
+      "year": 1997
+    }
+  ],
+  "2025-03-23": [
+    {
+      "title": "Main Title (Gone with the Wind)",
+      "artist": "Max Steiner",
+      "year": 1939
+    },
+    {
+      "title": "Seven Nation Army",
+      "artist": "The White Stripes",
+      "year": 2003
+    },
+    {
+      "title": "Blackened",
+      "artist": "Metallica",
+      "year": 1988
+    },
+    {
+      "title": "I Want to Hold Your Hand",
+      "artist": "The Beatles",
+      "year": 1963
+    },
+    {
+      "title": "Sabotage",
+      "artist": "Beastie Boys",
+      "year": 1994
+    }
+  ],
+  "2025-03-24": [
+    {
+      "title": "Wishmaster",
+      "artist": "Nightwish",
+      "year": 2000
+    },
+    {
+      "title": "Whipping Post",
+      "artist": "The Allman Brothers Band",
+      "year": 1969
+    },
+    {
+      "title": "Dynamite",
+      "artist": "Taio Cruz",
+      "year": 2010
+    },
+    {
+      "title": "Wake Up",
+      "artist": "Arcade Fire",
+      "year": 2004
+    },
+    {
+      "title": "Stay",
+      "artist": "The Kid LAROI & Justin Bieber",
+      "year": 2021
+    }
+  ],
+  "2025-03-25": [
+    {
+      "title": "INDUSTRY BABY",
+      "artist": "Lil Nas X ft. Jack Harlow",
+      "year": 2021
+    },
+    {
+      "title": "Locked Out of Heaven",
+      "artist": "Bruno Mars",
+      "year": 2012
+    },
+    {
+      "title": "X\u00e1u Xi\u00e9 Xie",
+      "artist": "MC Bin Laden",
+      "year": 2016
+    },
+    {
+      "title": "Take My Breath Away",
+      "artist": "Berlin",
+      "year": 1986
+    },
+    {
+      "title": "There Is a Light That Never Goes Out",
+      "artist": "The Smiths",
+      "year": 1986
+    }
+  ],
+  "2025-03-26": [
+    {
+      "title": "War Ensemble",
+      "artist": "Slayer",
+      "year": 1990
+    },
+    {
+      "title": "A Love Supreme, Pt. 1: Acknowledgement",
+      "artist": "John Coltrane",
+      "year": 1965
+    },
+    {
+      "title": "Bodak Yellow",
+      "artist": "Cardi B",
+      "year": 2017
+    },
+    {
+      "title": "Take Me to Church",
+      "artist": "Hozier",
+      "year": 2013
+    },
+    {
+      "title": "IDOL",
+      "artist": "BTS",
+      "year": 2018
+    }
+  ],
+  "2025-03-27": [
+    {
+      "title": "What Was I Made For?",
+      "artist": "Billie Eilish",
+      "year": 2023
+    },
+    {
+      "title": "Mirrors",
+      "artist": "Justin Timberlake",
+      "year": 2013
+    },
+    {
+      "title": "Rock Your Baby",
+      "artist": "George McCrae",
+      "year": 1974
+    },
+    {
+      "title": "Chaiyya Chaiyya",
+      "artist": "Sukhwinder Singh & Sapna Awasthi",
+      "year": 1998
+    },
+    {
+      "title": "Never Too Much",
+      "artist": "Luther Vandross",
+      "year": 1981
+    }
+  ],
+  "2025-03-28": [
+    {
+      "title": "Greedy",
+      "artist": "Tate McRae",
+      "year": 2023
+    },
+    {
+      "title": "Midnight City",
+      "artist": "M83",
+      "year": 2011
+    },
+    {
+      "title": "Get Ur Freak On",
+      "artist": "Missy Elliott",
+      "year": 2001
+    },
+    {
+      "title": "Run This Town",
+      "artist": "Jay-Z ft. Rihanna & Kanye West",
+      "year": 2009
+    },
+    {
+      "title": "Chameleon",
+      "artist": "Herbie Hancock",
+      "year": 1973
+    }
   ]
 }

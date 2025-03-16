@@ -609,6 +609,12 @@ def add_song():
 
     return jsonify({"message": "Song added successfully"})
 
+@app.route('/get-song-count', methods=['GET'])
+def get_song_count():
+    """Return the count of songs in the database."""
+    songs = load_songs()
+    count = int(len(songs))
+    return jsonify({"count": count})
 
 if __name__ == '__main__':
     # For local development
